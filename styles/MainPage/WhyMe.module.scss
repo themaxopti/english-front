@@ -1,0 +1,48 @@
+.why-me {
+    font-family: "Arial";
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__block {
+        display: flex;
+        position: relative;
+        padding: 0 0.5rem 1rem 0.5rem;
+        min-height: 200px;
+        border: 2px solid #8CB3F3;
+        width: 100%;
+        border-right:none;
+        border-left:none;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: #e1fafe;
+        font-size: 14px;
+        height: 40px;
+        width: 254px;
+        background-color: #8cb3f3;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        margin-top: 3.5rem;
+        display: flex;
+        text-align: center;
+        font-size: 34px;
+    }
+}
+
+
+@media(max-width:1000px){
+    .why-me__text{
+        font-size: 27px;
+    }
+}

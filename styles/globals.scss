@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+@font-face {
+  font-family: "Arial";
+  src: url("/public/fonts/geo_1.ttf") format("ttf");
+}
+@import "./mixins.scss";
+@import "./variables.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.section__content {
+  flex: 1 1;
+  flex-grow: 1;
+  max-width: $widthLG;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section_fullscren{
+  min-height: 100vh;
+}
+
+.section__content_p {
+}
+
+ul li {
+  list-style: none;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &__content {
+    margin-top: 70px;
+  }
+}
+
+.section_fixed {
+  position: fixed;
+}
+
+.instagram-logo {
+  display: flex;
+  column-gap: 10px;
+}
+
+.instagram-logo__img {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  img {
+    @include object_fit_contain;
+  }
+}
+
+@media (max-width: 750px) {
+  .wrapper {
+    &__content {
+      margin-top: 70px;
+    }
+  }
+}
+
+@media (max-width: 1298px) {
+  .section__content_p {
+    padding: 0 0.5rem 0 0.5rem;
+  }
+}

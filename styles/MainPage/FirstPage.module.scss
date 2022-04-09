@@ -1,0 +1,128 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+.first-page {
+    font-family: "Arial";
+    margin-top: 200px;
+    position: relative;
+    z-index: 5;
+    &__h {
+        font-size: 20px;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        width: 180px;
+        color: #8cb3f3;
+        font-weight: bold;
+        height: 31px;
+        border: 1px solid #8cb3f3;
+        border-radius: 10px;
+    }
+}
+
+.main-image {
+    position: absolute;
+    right: -200px;
+    top: -30px;
+    max-width: 1400px;
+    width: 100%;
+    height: 700px;
+    &__img {
+        @include object_fit_contain;
+    }
+}
+
+.rectangle{
+    z-index: 1;
+    position: absolute;
+    bottom: -800px;
+    left: -2000px;
+}
+
+.main-image__circle {
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #8cb3f3;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+}
+
+.main-image__circle:first-child {
+    top: 240px;
+    left: 320px;
+}
+
+.main-image__circle:nth-child(2) {
+    top: 93px;
+    left: 720px;
+}
+
+.main-image__circle:nth-child(3) {
+    top: 200px;
+    left: 1030px;
+}
+
+.main-image__circle:nth-child(4) {
+    top: 440px;
+    left: 150px;
+}
+
+.main-image__circle.main-image__circle_animated {
+    width: 60px;
+    height: 60px;
+    -webkit-box-shadow: 5px 2px 75px 42px rgba(140, 179, 243, 0.4);
+    -moz-box-shadow: 5px 2px 75px 42px rgba(140, 179, 243, 0.4);
+    box-shadow: 5px 2px 75px 42px rgba(140, 179, 243, 0.4);
+}
+
+@media (max-width: 576px) {
+    .main-image {
+        // right: -200px;
+        margin-right: 100px;
+        transform: scale(1.3, 1.5);
+        top: 30px;
+    }
+
+    .first-page {
+        margin-top: 110px;
+    }
+}
+
+@media (max-width: 330px) {
+    .main-image {
+        top: 90px;
+        transform: scale(2, 2);
+        right: 1000px;
+    }
+
+    .first-page {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 1147px) {
+    .main-image {
+        top: 0px;
+        right: -90px;
+    }
+
+    .rectangle{
+        bottom: -1000px;
+    }
+
+    .main-image__circle:first-child {
+        top: 240px;
+        left: 320px;
+    }
+}
+
+@media (max-width: 1397px) {
+    .main-image__circle {
+        display: none;
+    }
+}
