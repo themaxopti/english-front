@@ -7,7 +7,7 @@ export const AboutMe: NextPage = () => {
     return (
         <div className='section' style={{ minHeight: '700px', overflow: 'hidden' }}>
             <img className={s['rect']} src="/images/Rectangle.svg" alt="" />
-            
+
             <h2 className={s['h']}>Обо мне</h2>
 
             <div className={s["about-me"]}>

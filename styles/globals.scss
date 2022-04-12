@@ -22,6 +22,11 @@ a {
   box-sizing: border-box;
 }
 
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
 .section {
   display: flex;
   justify-content: center;
@@ -37,7 +42,7 @@ a {
   margin: 0 auto;
 }
 
-.section_fullscren{
+.section_fullscren {
   min-height: 100vh;
 }
 
@@ -83,6 +88,540 @@ p {
   height: 30px;
   img {
     @include object_fit_contain;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+
+  &_blue {
+    background-color: #8cb3f3;
+  }
+
+  &_absolute {
+    position: absolute;
+  }
+}
+
+.card-achievement {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  align-items: center;
+  column-gap: 40px;
+  font-family: "Arial";
+  font-size: 20px;
+
+  &__img {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    flex-basis: 55px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      // @include object_fit_contain;
+    }
+  }
+
+  &__text {
+    font-weight: bold;
+  }
+}
+
+// Courses Page
+
+.course-first-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Arial";
+
+  &__table {
+    position: relative;
+    padding-bottom: 100px;
+    max-width: 565px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+    // background-color: white;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  &__level {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__program {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #43b078;
+  }
+
+  &__description {
+    margin-top: 5rem;
+  }
+}
+
+.course-first-page__image {
+  animation: move 20s alternate infinite linear;
+  position: absolute;
+  right: -300px;
+  max-width: 1500px;
+  width: 100%;
+  height: 800px;
+
+  img {
+    @include object_fit_contain;
+  }
+}
+
+.description-block {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  &__week {
+    transform: translateY(15px);
+    font-weight: bold;
+    // margin-top: 50px;
+  }
+
+  &__task {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+  }
+
+  &__task-title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  &__task-desc {
+    font-size: 14px;
+    line-height: 1.3rem;
+    ul {
+      li {
+        list-style: inside;
+
+        // transform: translateX(15px);
+        position: relative;
+      }
+    }
+  }
+}
+
+.course-main {
+  margin-top: -50px;
+  font-family: "Arial";
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ielts-how {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 50px;
+  font-family: "Arial";
+
+  &__marks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  &__mark {
+    font-family: "Arial";
+    display: grid;
+    grid-template-columns: 30px minmax(100px, 498px);
+    column-gap: 10px;
+  }
+
+  &__image {
+    transform: translateY(9px);
+    // align-self: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    img {
+      @include object_fit_contain;
+    }
+  }
+
+  &__text {
+    align-self: start;
+    line-height: 30px;
+  }
+}
+
+.how-ielts-rects_one {
+  position: absolute;
+  left: -400px;
+  width: 800px;
+  height: 500px;
+}
+
+.how-ielts-rects_two {
+  position: absolute;
+  right: -400px;
+  width: 800px;
+  height: 500px;
+}
+
+// Courses Page
+
+// Tarifs
+.tarifs {
+  font-family: "Arial";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 100px;
+
+  &__wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    row-gap: 50px;
+    column-gap: 200px;
+  }
+
+  &__card {
+    // position: relative;
+    // z-index: 10;
+    padding: 1rem;
+    max-width: 330px;
+    width: 100%;
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__price {
+    margin-top: 30px;
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  &__desc {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__module {
+    color: #bababa;
+    font-size: 20px;
+  }
+
+  &__or {
+    color: #bababa;
+    font-size: 11px;
+  }
+
+  &__tasks {
+    margin-top: 50px;
+    text-align: start;
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    row-gap: 20px;
+    li {
+      display: grid;
+      align-items: center;
+      column-gap: 10px;
+      grid-template-columns: 5px 1fr;
+      list-style: inside;
+    }
+  }
+
+  &__button {
+    margin-top: 100px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    border-radius: 30px;
+    background-color: #305af6;
+  }
+}
+
+.tarifs__line {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: rotate(150deg);
+  width: 2000px;
+  height: 100px;
+  background-color: #305af6;
+}
+
+.card_orange {
+  background-color: #f9cf93;
+  -webkit-box-shadow: 7px -8px 0px 0px rgba(251, 190, 73, 0.2);
+  -moz-box-shadow: 7px -8px 0px 0px rgba(251, 190, 73, 1);
+  box-shadow: 7px -8px 0px 0px rgba(251, 190, 73, 0.7);
+}
+
+.tarifs__button_orange {
+  height: 40px;
+  background-color: #fbbe49;
+}
+
+.li_dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.tarifs__card {
+  position: relative;
+  margin: 0 auto;
+}
+
+// privat-policy
+
+.privat-policy {
+  display: flex;
+  flex-direction: column;
+  row-gap: 70px;
+  font-family: "Montserrat";
+
+  h1 {
+    font-size: 25px;
+  }
+  h2{
+    font-size: 19px;
+    padding: 0;
+    margin: 0;
+  }
+  p{
+  }
+
+  
+}
+
+@media(max-width:368px){
+  .privat_h1{
+    font-size: 20px;
+  }
+}
+
+.inform-block{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  &__box{
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    row-gap: 20px;
+  }
+}
+
+// privat-policy
+
+@media (max-width: 682px) {
+  .tarifs__wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 299px) {
+  div.tarifs__card_one {
+    height: 630px;
+  }
+
+  div.tarifs__card_two {
+    height: 730px;
+  }
+}
+
+.tarifs__card_one {
+  height: 530px;
+
+  .tarifs__button {
+    margin-top: 50px;
+  }
+}
+
+.tarifs__card_two {
+  height: 630px;
+
+  .tarifs__button {
+    margin-top: 50px;
+  }
+}
+
+.tarifs__card_blue {
+  -webkit-box-shadow: 7px -8px 0px 0px rgba(48, 90, 246, 0.2);
+  -moz-box-shadow: 7px -8px 0px 0px rgba(48, 90, 246, 0.2);
+  box-shadow: 7px -8px 0px 0px rgba(48, 90, 246, 0.2);
+  background-color: white;
+  border: 2px solid #305af6;
+}
+
+// Tarifs
+
+// Form-contact
+
+.form-contact {
+  padding-bottom: 100px;
+  font-family: "Arial";
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  // justify-content: center;
+  align-items: flex-start;
+  max-width: 760px;
+  width: 100%;
+  &__inp {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+    }
+
+    input {
+      font-size: 20px;
+      padding-left: 10px;
+      width: 100%;
+      height: 60px;
+      border: 2px solid black;
+    }
+  }
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  input {
+    outline: none;
+    width: 160px;
+    height: 60px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form-contact__wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Form-contact
+
+@media (max-width: 1381px) {
+  .how-ielts-rects_one {
+    display: none;
+  }
+
+  .how-ielts-rects_two {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .course-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 566px) {
+  .course-first-page {
+    padding-bottom: 500px;
+  }
+
+  .course-first-page__image {
+    left: 0;
+    bottom: -100px;
+    animation: none;
+    transform: scale(1.3, 1.3);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(0px);
+    transform: translateX(350px);
+  }
+}
+
+@media (max-width: 888px) {
+  .card-achievement {
+    font-size: 16px;
+  }
+}
+
+//
+@media (max-width: 395px) {
+  .course-first-page__image {
+    left: 0;
+    bottom: -100px;
+    transform: scale(1.6, 1.6);
+  }
+
+  .description-block {
+    padding-left: 2px;
   }
 }
 

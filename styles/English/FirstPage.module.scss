@@ -1,0 +1,58 @@
+@import "../mixins.scss";
+
+.firstPage {
+    display: flex;
+    column-gap: 60px;
+}
+
+
+.image {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    top: -150px;
+    right: -70px;
+    height: 1000px;
+    animation: move 20s alternate infinite linear;
+
+    img {
+        @include object_fit_contain;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(0px);
+        transform: translateX(350px);
+    }
+}
+
+
+
+@media (max-width: 390px) {
+    .firstPage {
+        flex-direction: column;
+    }
+}
+
+
+
+@media (max-width: 548px) {
+   .image{
+       animation: none;
+       top: 640px;
+       transform: scale(1.3,1.3);
+       right: 0px;
+   }
+}
+
+
+
+@media (max-width: 390px) {
+    .image{
+        top: 840px;
+    }
+ }

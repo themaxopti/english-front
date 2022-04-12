@@ -1,0 +1,152 @@
+@import "../mixins.scss";
+
+.courses {
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    font-family: "Arial";
+    column-gap: 1rem;
+
+    &__card {
+        position: relative;
+        justify-self: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 500px;
+        column-gap: 1rem;
+        width: 100%;
+        height: 354px;
+        padding: 36px;
+        background-color: #160d2f;
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img {
+            @include object_fit_cover;
+        }
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__desc {
+        font-size: 12px;
+        height: 40px;
+    }
+    &__more {
+        display: flex;
+        align-items: center;
+        column-gap: 0.1rem;
+        a {
+            color: white;
+        }
+    }
+
+    &__image-card {
+        position: relative;
+        width: 40px;
+        height: 10px;
+        img {
+            @include object_fit_contain;
+        }
+    }
+
+    &__text-wrap {
+        align-self: center;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 40px 40px;
+        // gap: 1rem;
+    }
+}
+
+.h2 {
+    position: absolute;
+    top: -140px;
+    left: -70px;
+    font-family: "Arial";
+    color: white;
+    margin-left: 70px;
+}
+
+@media (max-width: 985px) {
+    .courses {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 499px) {
+    .courses__text-wrap {
+        grid-template-rows: auto;
+        row-gap: 20px;
+    }
+
+    .courses__more {
+        a {
+            font-size: 12px;
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 600px;
+    background-color: #03c1cf;
+}
+
+.line:first-child {
+    left: 340px;
+    transform: rotate(45deg);
+    top: 100px;
+}
+
+.line:nth-child(2) {
+    transform: rotate(45deg);
+    top: 100px;
+    left: 1040px;
+}
+
+.decor {
+    position: absolute;
+    &__elem {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+    }
+}
+
+.decor:first-child{
+    right: 500px;
+}
+
+.decor:nth-child(2){
+    left: 400px;
+}
+
+.decor__elem:first-child {
+    left: 40px;
+}
+
+.decor__elem:last-child {
+    left: 80px;
+}
+
+
+@media(max-width:469px){
+    
+.decor:first-child{
+    right: 400px;
+}
+
+.decor:nth-child(2){
+    left: 300px;
+}
+}
