@@ -11,17 +11,17 @@ export const Footer = () => {
                 <div className={s['footer']}>
                     <nav>
                         <div>Контакты</div>
-                        <div>Телефон</div>
+                        <div>info@dreamteacher.co</div>
                     </nav>
                     <nav>
                         <li className={'instagram-logo'}>
-                            <div><A path='/'>English_dreamteacher</A></div>
+                            <div><A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'>English_dreamteacher</A></div>
                             <div className={"instagram-logo__img"}><img src="/images/instagram-logo.png" alt="" /></div>
                         </li>
                     </nav>
                     <nav>
-                        <div><A path='/'>Политика Конфиденциальности</A></div>
-                        <div><A path='/'>Договор публичной оферты</A></div>
+                        <div><A path='/privat-policy'>Политика Конфиденциальности</A></div>
+                        <div><A path='/public-offer-agreement'>Договор публичной оферты</A></div>
                     </nav>
                     <nav>
                         <div><p>Принимаем к оплате</p></div>

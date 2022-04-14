@@ -31,7 +31,12 @@ export const FirstPage: NextPage = () => {
     })
 
     function scrollPage() {
-        window.scrollTo(0, whyRefTop - 200)
+        // window.scrollTo(0, whyRefTop - 200)
+        window.scrollTo({
+            behavior:'smooth',
+            top:whyRefTop - 200,
+            left:0
+        })
     }
 
     return (

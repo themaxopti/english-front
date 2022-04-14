@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import s from '../styles/Header.module.scss'
 import { A } from './Link'
 import classNames from 'classnames'
@@ -22,18 +22,19 @@ export const Header: NextPage = () => {
     <div className='section section_fixed' style={{ top: '0', zIndex: '1000', background: 'white' }}>
       <div className="section__content">
         <div className={s['header-comp']}>
+
           <div className={s['header-comp__logo']}>
-            <img src={"/images/logo.svg"} alt="" />
+              <img src={"/images/logo.svg"} alt="" />
           </div>
           <div className={s['header-comp__content']}>
             <ul>
               <li className={s["header-comp__li-links"]}>
                 <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
-                <div className={s['header-comp__li-thin']}><A path='/'>Подготовка к IELTS</A></div>
-                <div className={s['header-comp__li-thin']}><A path='/'>Общий английский</A></div>
+                <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
+                <div className={s['header-comp__li-thin']}><A path='/English'>Общий английский</A></div>
               </li>
               <li className={'instagram-logo'}>
-                <div>English_dreamteacher</div>
+                <div> <A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
                 <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
               </li>
             </ul>

@@ -13,12 +13,13 @@ interface Props {
     width?: string
     height?: string
     isCenter?: boolean
+    isBlank?:boolean
 }
 
-export const A: NextPage<Props> = ({ children, path, width, height, isCenter = false }) => {
+export const A: NextPage<Props> = ({ children, path, width, height, isCenter = false,isBlank = false }) => {
     return (
         <Link href={path}>
-            <a style={{ width, height, display: `${isCenter ? 'flex' : 'block'}`, justifyContent: `${isCenter ? 'center' : 'start'} `, alignItems: `${isCenter ? 'center' : 'start'}` }}>{children}</a>
+            <a target={`${isBlank ? '_blank' : '_self'}`} style={{ width, height, display: `${isCenter ? 'flex' : 'block'}`, justifyContent: `${isCenter ? 'center' : 'start'} `, alignItems: `${isCenter ? 'center' : 'start'}` }}>{children}</a>
         </Link>
     )
 }
