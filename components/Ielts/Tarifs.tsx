@@ -1,23 +1,26 @@
 import React from 'react'
 import { A } from '../Link'
+import { motion } from 'framer-motion'
+import { sideAnimation } from '../MainPage/motion'
+
 
 export const Tarifs = () => {
     return (
-        <div className='section'>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className='section'>
             <div className='tarifs__line'></div>
 
             <div className="section__content" style={{ padding: '100px 0 200px 0 ' }}>
                 <div className="tarifs">
-                    <div><h2 style={{ fontSize: '48px' }}>Тарифы</h2></div>
+                    <motion.div custom={1.1} variants={sideAnimation(-100)}><h2 style={{ fontSize: '48px' }}>Тарифы</h2></motion.div>
                     <div className="tarifs__wrap">
-                        <div className="tarifs__card tarifs__card_blue tarifs__card_one">
-                            <div className="tarifs__title">Тариф «Стандарт»</div>
-                            <div className="tarifs__price">$99</div>
-                            <div className="tarifs__desc">
+                        <motion.div custom={0.5} variants={sideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_one">
+                            <motion.div custom={0.7} variants={sideAnimation(-100)}  className="tarifs__title">Тариф «Стандарт»</motion.div>
+                            <motion.div custom={0.8} variants={sideAnimation(100)}  className="tarifs__price">$99</motion.div>
+                            <motion.div custom={0.9} variants={sideAnimation(-100)}  className="tarifs__desc">
                                 <span className='tarifs__module'>(1 модуль)</span>
                                 <span className='tarifs__or'>(или 180$ при оплате двух модулей сразу)</span>
-                            </div>
-                            <ul className='tarifs__tasks'>
+                            </motion.div>
+                            <motion.ul custom={1} variants={sideAnimation(200)}  className='tarifs__tasks'>
                                 <li>
                                     <div className='li_dot'></div>
                                     <div>Предварительная оценка текущего уровня</div>
@@ -34,21 +37,21 @@ export const Tarifs = () => {
                                     <div className='li_dot'></div>
                                     <div>Материалы и ресурсы для подготовки</div>
                                 </li>
-                            </ul>
-                            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                            </motion.ul>
+                            <motion.div custom={1.2} variants={sideAnimation(0,200)}  style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <A path='/'> <div className="tarifs__button">Order now</div> </A>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
 
 
-                        <div className="tarifs__card tarifs__card_blue tarifs__card_two">
-                            <div className="tarifs__title">Тариф <br />  «Углубленная подготовка»</div>
-                            <div className="tarifs__price">$199</div>
-                            <div className="tarifs__desc">
+                        <motion.div custom={0.5} variants={sideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_two">
+                            <motion.div custom={0.6} variants={sideAnimation(-100)} className="tarifs__title">Тариф <br />  «Углубленная подготовка»</motion.div>
+                            <motion.div custom={0.7} variants={sideAnimation(100)} className="tarifs__price">$199</motion.div>
+                            <motion.div custom={0.8} variants={sideAnimation(200)} className="tarifs__desc">
                                 <span className='tarifs__module'>(1 модуль)</span>
                                 <span className='tarifs__or'>(или 360$ при оплате двух модулей сразу)</span>
-                            </div>
-                            <ul className='tarifs__tasks'>
+                            </motion.div>
+                            <motion.ul custom={1} variants={sideAnimation(100)} className='tarifs__tasks'>
                                 <li>
                                     <div className='li_dot'></div>
                                     <div>Предварительная оценка текущего уровня</div>
@@ -69,14 +72,14 @@ export const Tarifs = () => {
                                     <div className='li_dot'></div>
                                     <div>отправка и индивидуальный разбор 8 эссе и 8 разговорных тестов</div>
                                 </li>
-                            </ul>
-                            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                            </motion.ul>
+                            <motion.div custom={1.2} variants={sideAnimation(0,200)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <A path='/'> <div className="tarifs__button">Order now</div> </A>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

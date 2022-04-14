@@ -17,7 +17,6 @@ const IeltsOfYourDream: NextPage = () => {
       <IeltsQuestions />
       <Tarifs />
       <Form />
-      <Tarifs/>
     </Wrapper>
   )
 }

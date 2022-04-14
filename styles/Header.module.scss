@@ -22,6 +22,16 @@
         }
     }
 
+    &__li-links{
+        display: flex;
+        column-gap: 20px;
+
+        div{
+            font-weight: bold;
+            font-size: 13px;
+        }
+    }
+
     &__content {
         grid-area: "content";
         padding-top: 0.5rem;
@@ -115,6 +125,15 @@
         right: 0;
     }
 }
+
+// .header-comp__li-thin{
+//     font-weight: bold;
+//     font-size: 13px;
+// }
+
+// .header-comp__li-thin:nth-child(2){
+//     margin-right: 140px;
+// }
 
 .instagram-logo {
     display: flex;

@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import s from '../styles/Header.module.scss'
 import { A } from './Link'
 import classNames from 'classnames'
@@ -27,8 +27,11 @@ export const Header: NextPage = () => {
           </div>
           <div className={s['header-comp__content']}>
             <ul>
-              <li><A path='/'>Подготовка к IELTS</A></li>
-              <li><A path='/'>Общий английский</A></li>
+              <li className={s["header-comp__li-links"]}>
+                <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
+                <div className={s['header-comp__li-thin']}><A path='/'>Подготовка к IELTS</A></div>
+                <div className={s['header-comp__li-thin']}><A path='/'>Общий английский</A></div>
+              </li>
               <li className={'instagram-logo'}>
                 <div>English_dreamteacher</div>
                 <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
