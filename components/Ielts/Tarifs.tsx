@@ -1,7 +1,7 @@
 import React from 'react'
 import { A } from '../Link'
 import { motion } from 'framer-motion'
-import { sideAnimation } from '../MainPage/motion'
+import { useShow, useSideAnimation } from '../MainPage/motion'
 
 
 export const Tarifs = () => {
@@ -11,16 +11,16 @@ export const Tarifs = () => {
 
             <div className="section__content" style={{ padding: '100px 0 200px 0 ' }}>
                 <div className="tarifs">
-                    <motion.div custom={1.1} variants={sideAnimation(-100)}><h2 style={{ fontSize: '48px' }}>Тарифы</h2></motion.div>
+                    <motion.div custom={1.1} variants={useSideAnimation(-100)}><h2 style={{ fontSize: '48px' }}>Тарифы</h2></motion.div>
                     <div className="tarifs__wrap">
-                        <motion.div custom={0.5} variants={sideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_one">
-                            <motion.div custom={0.7} variants={sideAnimation(-100)}  className="tarifs__title">Тариф «Стандарт»</motion.div>
-                            <motion.div custom={0.8} variants={sideAnimation(100)}  className="tarifs__price">$99</motion.div>
-                            <motion.div custom={0.9} variants={sideAnimation(-100)}  className="tarifs__desc">
+                        <motion.div custom={0.5} variants={useSideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_one">
+                            <motion.div custom={0.7} variants={useSideAnimation(-100)}  className="tarifs__title">Тариф «Стандарт»</motion.div>
+                            <motion.div custom={0.8} variants={useSideAnimation(100)}  className="tarifs__price">$99</motion.div>
+                            <motion.div custom={0.9} variants={useSideAnimation(-100)}  className="tarifs__desc">
                                 <span className='tarifs__module'>(1 модуль)</span>
                                 <span className='tarifs__or'>(или 180$ при оплате двух модулей сразу)</span>
                             </motion.div>
-                            <motion.ul custom={1} variants={sideAnimation(200)}  className='tarifs__tasks'>
+                            <motion.ul custom={1} variants={useSideAnimation(200)}  className='tarifs__tasks'>
                                 <li>
                                     <div className='li_dot'></div>
                                     <div>Предварительная оценка текущего уровня</div>
@@ -38,20 +38,20 @@ export const Tarifs = () => {
                                     <div>Материалы и ресурсы для подготовки</div>
                                 </li>
                             </motion.ul>
-                            <motion.div custom={1.2} variants={sideAnimation(0,200)}  style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                            <motion.div custom={1.2} variants={useSideAnimation(0,200)}  style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <A path='/'> <div className="tarifs__button">Order now</div> </A>
                             </motion.div>
                         </motion.div>
 
 
-                        <motion.div custom={0.5} variants={sideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_two">
-                            <motion.div custom={0.6} variants={sideAnimation(-100)} className="tarifs__title">Тариф <br />  «Углубленная подготовка»</motion.div>
-                            <motion.div custom={0.7} variants={sideAnimation(100)} className="tarifs__price">$199</motion.div>
-                            <motion.div custom={0.8} variants={sideAnimation(200)} className="tarifs__desc">
+                        <motion.div custom={0.5} variants={useSideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_two">
+                            <motion.div custom={0.6} variants={useSideAnimation(-100)} className="tarifs__title">Тариф <br />  «Углубленная подготовка»</motion.div>
+                            <motion.div custom={0.7} variants={useSideAnimation(100)} className="tarifs__price">$199</motion.div>
+                            <motion.div custom={0.8} variants={useSideAnimation(200)} className="tarifs__desc">
                                 <span className='tarifs__module'>(1 модуль)</span>
                                 <span className='tarifs__or'>(или 360$ при оплате двух модулей сразу)</span>
                             </motion.div>
-                            <motion.ul custom={1} variants={sideAnimation(100)} className='tarifs__tasks'>
+                            <motion.ul custom={1} variants={useSideAnimation(100)} className='tarifs__tasks'>
                                 <li>
                                     <div className='li_dot'></div>
                                     <div>Предварительная оценка текущего уровня</div>
@@ -73,7 +73,7 @@ export const Tarifs = () => {
                                     <div>отправка и индивидуальный разбор 8 эссе и 8 разговорных тестов</div>
                                 </li>
                             </motion.ul>
-                            <motion.div custom={1.2} variants={sideAnimation(0,200)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                            <motion.div custom={1.2} variants={useSideAnimation(0,200)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                 <A path='/'> <div className="tarifs__button">Order now</div> </A>
                             </motion.div>
                         </motion.div>

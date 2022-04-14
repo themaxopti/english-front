@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive'
+
 export const textAnimation = {
     hidden: {
         x: -100,
@@ -23,6 +26,28 @@ export const imgAnimation = {
     }),
 }
 
+export const useImgAnimation = ():{} => {
+
+    const isBig = useMediaQuery({
+        query: '(min-width: 1000px)'
+    })
+
+    if (isBig) {
+        return {
+            hidden: {
+                x: -100,
+                opacity: 1
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                opacity: 1,
+                transition: { delay: custom }
+            })
+        }
+    } else {
+        return {}
+    }
+}
 
 export const whyMeAnimation = {
     hidden: {
@@ -78,6 +103,34 @@ export const sideAnimation = (x: number, y = 0) => ({
     })
 })
 
+
+export const useSideAnimation = (x: number, y = 0): {} => {
+
+    const isBig = useMediaQuery({
+        query: '(min-width: 1000px)'
+    })
+
+
+    if (isBig) {
+        return {
+            hidden: {
+                x,
+                y,
+                opacity: 0
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: { delay: custom }
+            })
+        }
+    } else {
+        return {}
+    }
+
+}
+
 export const show = {
     hidden: {
         opacity: 0,
@@ -88,4 +141,28 @@ export const show = {
         opacity: 1,
         transition: { delay: custom }
     })
+}
+
+
+
+export const useShow = (): {} => {
+    const isBig = useMediaQuery({
+        query: '(min-width: 1000px)'
+    })
+
+    if (isBig) {
+        return {
+            hidden: {
+                opacity: 0,
+                scale: 0.9
+            },
+            visible: (custom: any) => ({
+                scale: 1,
+                opacity: 1,
+                transition: { delay: custom }
+            })
+        }
+    } else {
+        return {}
+    }
 }

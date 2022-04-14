@@ -6,7 +6,7 @@ import { setWhyDiv } from '../../store/reducers/tags.reducer'
 import { AppState, AppStore, useAppDispatch } from '../../store/store'
 import s from '../../styles/MainPage/WhyMe.module.scss'
 import { motion } from 'framer-motion'
-import { textAnimation, whyMeAnimation, whyMeAnimationText } from './motion'
+import { textAnimation, useSideAnimation, whyMeAnimation, whyMeAnimationText } from './motion'
 
 export const WhyMe: NextPage = () => {
     const dispatch = useAppDispatch()
@@ -24,8 +24,8 @@ export const WhyMe: NextPage = () => {
             <div className="section__content">
                 <div className={s['why-me']}>
                     <div className={s['why-me__block']}>
-                        <div className={s['why-me__title']}><motion.p custom={1} variants={whyMeAnimation}>Почему Dream Teacher?</motion.p></div>
-                        <div className={s['why-me__text']}><motion.p custom={1} variants={whyMeAnimationText}>Благодаря английскому со мной студенты осуществляют свои мечты: от поступления заграницу до комфортной жизни и успешной карьеры там  </motion.p > </div>
+                        <div className={s['why-me__title']}><motion.p custom={1} variants={useSideAnimation(100)}>Почему Dream Teacher?</motion.p></div>
+                        <div className={s['why-me__text']}><motion.p custom={1} variants={useSideAnimation(-200)}>Благодаря английскому со мной студенты осуществляют свои мечты: от поступления заграницу до комфортной жизни и успешной карьеры там  </motion.p > </div>
                     </div>
                 </div>
             </div>

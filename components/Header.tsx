@@ -3,10 +3,17 @@ import React, { useState } from 'react'
 import s from '../styles/Header.module.scss'
 import { A } from './Link'
 import classNames from 'classnames'
+import { DarkRect } from './DarkRect'
+import { useRouter } from 'next/router'
+import { delay } from '../helpers/delay'
+
 
 export const Header: NextPage = () => {
 
+  const router = useRouter()
+
   const [isOpen, setIsOpen] = useState(false)
+  const [isActive, setIsActive] = useState(false)
 
   const mobileHeaderClass = classNames({
     [s["header-mobile__content"]]: true,
@@ -15,58 +22,69 @@ export const Header: NextPage = () => {
 
   function openNavbar() {
     setIsOpen(!isOpen)
+    setIsActive(!isActive)
   }
 
+  async function clickedToLink() {
+    openNavbar()
+    await delay(700)
+    router.push('/')
+  }
 
   return (
-    <div className='section section_fixed' style={{ top: '0', zIndex: '1000', background: 'white' }}>
-      <div className="section__content">
-        <div className={s['header-comp']}>
 
-          <div className={s['header-comp__logo']}>
+    <>
+      <DarkRect isActive={isActive} />
+
+      <div className='section section_fixed' style={{ top: '0', zIndex: '1000', background: 'white' }}>
+        <div className="section__content">
+          <div className={s['header-comp']}>
+            <div className={s['header-comp__logo']}>
               <img src={"/images/logo.svg"} alt="" />
+            </div>
+            <div className={s['header-comp__content']}>
+              <ul>
+                <li className={s["header-comp__li-links"]}>
+                  <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
+                  <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
+                  <div className={s['header-comp__li-thin']}><A path='/English'>Общий английский</A></div>
+                </li>
+                <li className={'instagram-logo'}>
+                  <div> <A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
+                  <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className={s['header-comp__content']}>
-            <ul>
-              <li className={s["header-comp__li-links"]}>
-                <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
-                <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
-                <div className={s['header-comp__li-thin']}><A path='/English'>Общий английский</A></div>
-              </li>
-              <li className={'instagram-logo'}>
-                <div> <A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
-                <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
-              </li>
-            </ul>
-          </div>
-        </div>
 
 
-        <div className={s["header-mobile"]}>
-          <div className={s["header-mobile__wrapp"]}>
+          <div className={s["header-mobile"]}>
+            <div className={s["header-mobile__wrapp"]}>
 
-            <nav className={s["header-mobile__nav"]}>
-              <div className={s['header-mobile__logo']}><img src="/images/logo.svg" alt="" /></div>
-              <div onClick={openNavbar} className={s['header-mobile__navbar-image']}><img src="/images/navbar.png" alt="" /></div>
-            </nav>
+              <nav className={s["header-mobile__nav"]}>
+                <div className={s['header-mobile__logo']}><img src="/images/logo.svg" alt="" /></div>
+                <div onClick={openNavbar} className={s['header-mobile__navbar-image']}><img src="/images/navbar.png" alt="" /></div>
+              </nav>
 
-            <nav className={mobileHeaderClass}>
-              <div className={s["header-mobile__navbar"]}>
-                <ul>
-                  <li><A path='/'>Подготовка к IELTS</A></li>
-                  <li><A path='/'>Общий английский</A></li>
-                  <li className={s['instagram-logo']}>
-                    <div>English_dreamteacher</div>
-                    <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
-                  </li>
-                  <li><A path='/'>Обо мне</A></li>
-                  <li><A path='/'>Мой подход</A></li>
-                </ul>
-              </div>
-            </nav>
+              <nav className={mobileHeaderClass}>
+                <div className={s["header-mobile__navbar"]}>
+                  <ul>
+                    <li><A path='/'>Подготовка к IELTS</A></li>
+                    <li><A path='/'>Общий английский</A></li>
+
+                    <li onClick={clickedToLink}>Обо мне</li>
+                    <li><A path='/'>Мой подход</A></li>
+                    <li className={s['instagram-logo']}>
+                      <div>English_dreamteacher</div>
+                      <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

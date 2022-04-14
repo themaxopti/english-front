@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { sideAnimation } from '../MainPage/motion'
+import { useSideAnimation } from '../MainPage/motion'
 
 
 export const Description = () => {
@@ -9,8 +9,8 @@ export const Description = () => {
             <div className="section__content section__content_p">
                 <div className="course-main">
                     <div className="course-first-page__table">
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={0.5} variants={sideAnimation(200)} className='description-block'>
-                            <motion.div custom={1.1} variants={sideAnimation(-100)} className="description-block__week">2 неделя:</motion.div>
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={0.5} variants={useSideAnimation(200)} className='description-block'>
+                            <motion.div custom={1.1} variants={useSideAnimation(-100)} className="description-block__week">2 неделя:</motion.div>
                             <motion.div className="description-block__task">
                                 <div className="description-block__task-title">Listening</div>
                                 <div className="description-block__task-desc">Разбор и практика: Short-answer questions</div>
@@ -61,7 +61,7 @@ export const Description = () => {
                     </div>
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
                         <div className='description-block'>
                             <div className="description-block__week">3 неделя:</div>
                             <div className="description-block__task">
@@ -110,7 +110,7 @@ export const Description = () => {
 
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
                         <div className='description-block'>
                             <div className="description-block__week">4 неделя:</div>
                             <div className="description-block__task">
@@ -168,7 +168,7 @@ export const Description = () => {
 
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-40px' }}>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-40px' }}>
                         <div className='description-block'>
                             <div className="description-block__week">5 неделя:</div>
                             <div className="description-block__task">
@@ -222,7 +222,7 @@ export const Description = () => {
 
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true}} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true}} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
                         <div className='description-block'>
                             <div className="description-block__week">6 неделя:</div>
                             <div className="description-block__task">
@@ -276,7 +276,7 @@ export const Description = () => {
                     </motion.div>
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-34px' }}>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-34px' }}>
                         <div className='description-block'>
                             <div className="description-block__week">7 неделя:</div>
                             <div className="description-block__task">
@@ -329,7 +329,7 @@ export const Description = () => {
 
 
 
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={sideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-34px' }}>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-34px' }}>
                         <div className='description-block'>
                             <div className="description-block__week">8 неделя:</div>
                             <div className="description-block__task">

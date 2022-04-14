@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import React, { Suspense } from 'react'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { AboutMe } from '../components/MainPage/AboutMe'
@@ -9,9 +10,13 @@ import { FirstPage } from '../components/MainPage/FirstPage'
 import { FitBack } from '../components/MainPage/FitBack'
 import { How } from '../components/MainPage/How'
 import { WhyMe } from '../components/MainPage/WhyMe'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 import { Wrapper } from '../layouts/Wrapper'
 
+
 const Home: NextPage = () => {
+
+  
   return (
     <>
       <Wrapper>
@@ -22,7 +27,7 @@ const Home: NextPage = () => {
         <Approach />
         <How />
         <Courses />
-        <FitBack/>
+        <FitBack />
       </Wrapper>
     </>
   )
