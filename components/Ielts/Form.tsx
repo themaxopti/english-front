@@ -24,7 +24,7 @@ export const Form = () => {
             </ModalWindow>
 
             <div className='section'>
-                <div className="section__content">
+                <div className="section__content section__content_p">
                     <div className='form-contact__wrap'>
                         <form onSubmit={handleSubmit(onSubmit)} className='form-contact' action="">
                             <span style={{ fontWeight: '600' }}>ПОЛУЧИТЬ ДОСТУП К БЕСПЛАТНОМУ УРОКУ</span>

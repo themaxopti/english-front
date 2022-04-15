@@ -4,7 +4,6 @@ import s from '../../styles/MainPage/Courses.module.scss'
 import { A } from '../Link'
 import { motion } from 'framer-motion'
 import { show, sideAnimation, useSideAnimation } from './motion'
-import { useMediaQuery } from 'react-responsive'
 
 
 export const Courses: NextPage = () => {
