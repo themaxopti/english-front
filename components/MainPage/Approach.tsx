@@ -13,7 +13,7 @@ export const Approach: NextPage = () => {
     })
 
     return (
-        <motion.div viewport={{ once: true,amount:0.2 }} initial="hidden" whileInView="visible" className={classes}>
+        <motion.div id="aproach" viewport={{ once: true,amount:0.2 }} initial="hidden" whileInView="visible" className={classes}>
             <div className={s['with-image']}></div>
             {/* <img className={s["image"]} src="/images/paris.jpg" alt="" /> */}
             <div className={s['rectangle']}></div>

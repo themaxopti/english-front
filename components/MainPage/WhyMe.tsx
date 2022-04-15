@@ -12,7 +12,6 @@ export const WhyMe: NextPage = () => {
     const dispatch = useAppDispatch()
     const ref = useRef() as React.MutableRefObject<HTMLDivElement>
     const div = useSelector((state: AppState) => state.test.whyDiv)
-
     useEffect(() => {
         // @ts-ignore
         dispatch(setWhyDiv(ref.current))

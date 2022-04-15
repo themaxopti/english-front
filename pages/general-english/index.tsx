@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import { FirstPage } from '../../components/English/FirstPage'
 import { For } from '../../components/English/For'
@@ -9,6 +10,10 @@ import { Wrapper } from '../../layouts/Wrapper'
 
 const English = () => {
     return (
+        <>
+        <Head>
+            <title>General english</title>
+        </Head>
         <Wrapper>
             <FirstPage />
             <For />
@@ -17,6 +22,7 @@ const English = () => {
             <TarifsEnglish />
             <FormEnglish/>
         </Wrapper>
+        </>
     )
 }
 

@@ -13,24 +13,23 @@ import { useSelector } from 'react-redux'
 
 
 export const AboutMe: NextPage = () => {
-    const ref = useRef() as React.MutableRefObject<HTMLDivElement> 
+    const ref = useRef() as React.MutableRefObject<HTMLDivElement>
     const dispatch = useAppDispatch()
-    const about = useSelector((state:AppState) => state.test.aboutMeDiv)
-
+    const about = useSelector((state: AppState) => state.test.aboutMeDiv)
     useEffect(() => {
         // @ts-ignore
         dispatch(setAboutMeDiv(ref.current))
-        console.log()
     }, [])
 
     return (
         <motion.div viewport={{ once: true, amount: 0.3 }}
             initial="hidden"
             whileInView="visible"
-            className='section'
+            className='section about-me-section'
             style={{ minHeight: '700px', overflow: 'hidden' }}
             ref={ref}
-            >
+            id="aboutMe"
+        >
             <img className={s['rect']} src="/images/Rectangle.svg" alt="" />
 
             <motion.h2

@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import React, { Suspense } from 'react'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
@@ -16,9 +17,12 @@ import { Wrapper } from '../layouts/Wrapper'
 
 const Home: NextPage = () => {
 
-  
+
   return (
     <>
+      <Head>
+        <title>English dream teacher</title>
+      </Head>
       <Wrapper>
         <FirstPage />
         <WhyMe />

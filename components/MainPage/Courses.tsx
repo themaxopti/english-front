@@ -48,7 +48,7 @@ export const Courses: NextPage = () => {
                             <motion.div custom={0.6} variants={useSideAnimation(-100)} className={s["courses__title"]}>Экспресс-основы английского за 4 недели</motion.div>
                             <motion.div custom={0.6} variants={useSideAnimation(100)} className={s["courses__desc"]}>(уровень Beginner)</motion.div>
                             <motion.div custom={0.6} variants={useSideAnimation(-100)} className={s["courses__more"]}>
-                                <div><A path='/English'>Learn more</A></div>
+                                <div><A path='/general-english'>Learn more</A></div>
                                 <div className={s['courses__image-card']}><img src="/images/arrow-card.svg" alt="" /></div>
                             </motion.div>
                         </div>

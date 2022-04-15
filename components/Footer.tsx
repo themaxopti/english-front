@@ -12,6 +12,7 @@ export const Footer = () => {
                     <nav>
                         <div>Контакты</div>
                         <div>info@dreamteacher.co</div>
+                        <div>+380 66 720 90 17</div>
                     </nav>
                     <nav>
                         <li className={'instagram-logo'}>

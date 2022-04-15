@@ -1,14 +1,18 @@
 import { NextPage } from 'next'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import s from '../styles/Header.module.scss'
 import { A } from './Link'
 import classNames from 'classnames'
 import { DarkRect } from './DarkRect'
 import { useRouter } from 'next/router'
 import { delay } from '../helpers/delay'
+import { useSelector } from 'react-redux'
+import { AppState } from '../store/store'
 
 
 export const Header: NextPage = () => {
+
+  const aboutMeSection = useRef() as any
 
   const router = useRouter()
 
@@ -20,16 +24,33 @@ export const Header: NextPage = () => {
     [s["header-mobile__content_open"]]: isOpen
   })
 
+  useEffect(() => {
+    const aboutMe = document.querySelector('.about-me-section')
+    aboutMeSection.current = aboutMe
+  }, [])
+
+
   function openNavbar() {
     setIsOpen(!isOpen)
     setIsActive(!isActive)
   }
 
+
   async function clickedToLink() {
-    openNavbar()
-    await delay(700)
     router.push('/')
+    await delay(1000)
+    const top = aboutMeSection.current?.getBoundingClientRect().top
+    openNavbar()
+    debugger
+    await delay(700)
+    window.scrollTo({
+      behavior: 'smooth',
+      top,
+      left: 0
+    })
   }
+
+
 
   return (
 
@@ -47,7 +68,7 @@ export const Header: NextPage = () => {
                 <li className={s["header-comp__li-links"]}>
                   <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
                   <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
-                  <div className={s['header-comp__li-thin']}><A path='/English'>Общий английский</A></div>
+                  <div className={s['header-comp__li-thin']}><A path='/general-english'>Общий английский</A></div>
                 </li>
                 <li className={'instagram-logo'}>
                   <div> <A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
@@ -62,20 +83,21 @@ export const Header: NextPage = () => {
             <div className={s["header-mobile__wrapp"]}>
 
               <nav className={s["header-mobile__nav"]}>
-                <div className={s['header-mobile__logo']}><img src="/images/logo.svg" alt="" /></div>
+                <div className={s['header-mobile__logo']}><A path='/'> <img src="/images/logo.svg" alt="" /> </A></div>
                 <div onClick={openNavbar} className={s['header-mobile__navbar-image']}><img src="/images/navbar.png" alt="" /></div>
               </nav>
 
               <nav className={mobileHeaderClass}>
                 <div className={s["header-mobile__navbar"]}>
                   <ul>
-                    <li><A path='/'>Подготовка к IELTS</A></li>
-                    <li><A path='/'>Общий английский</A></li>
+                    <li><A path='/'>Главная</A></li>
+                    <li><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></li>
+                    <li><A path='/general-english'>Общий английский</A></li>
 
-                    <li onClick={clickedToLink}>Обо мне</li>
-                    <li><A path='/'>Мой подход</A></li>
+                    <li onClick={openNavbar}> <A path='/#aboutMe'> Обо мне</A> </li>
+                    <li onClick={openNavbar}><A path='/#aproach'>Мой подход</A></li>
                     <li className={s['instagram-logo']}>
-                      <div>English_dreamteacher</div>
+                      <div> <A path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
                       <div className={s['header-comp__instagram-logo']}><img src="/images/instagram-logo.png" alt="" /></div>
                     </li>
                   </ul>
