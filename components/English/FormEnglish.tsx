@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { Api } from '../../api/api'
 import s from '../../styles/English/FormEnglish.module.scss'
 import { ModalWindow } from '../ModalWindow'
 
@@ -14,13 +15,13 @@ export const FormEnglish = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>()
-    const onSubmit: SubmitHandler<Inputs> = data => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data, errors)
         setIsOpen(true)
+        await Api.getCourse('general-english',data.email,data.name)
     }
 
     return (
-
         <>
             <ModalWindow isOpen={isOpen} setIsopen={setIsOpen}>
                 <div className='thanks'>Спасибо,ссылка на урок пришла вам на почту</div>

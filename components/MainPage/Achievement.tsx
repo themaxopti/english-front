@@ -29,7 +29,7 @@ export const Achievement: NextPage = () => {
     })
 
     return (
-        <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible"
+        <motion.div viewport={{ once: true,amount:0.4 }} initial="hidden" whileInView="visible"
             className='section section__content_p'>
             <img className={s["rectangle"]} src="/images/rectangle-achivment.svg" alt="" />
             {/* <div className={circleClasses} style={{ width: '100px', height: '100px' }}></div> */}

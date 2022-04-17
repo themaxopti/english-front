@@ -39,7 +39,7 @@ export const Tarifs = () => {
                                 </li>
                             </motion.ul>
                             <motion.div custom={1.2} variants={useSideAnimation(0,200)}  style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                <A path='/'> <div className="tarifs__button">Order now</div> </A>
+                                <A path='https://pay.fondy.eu/s/Ql1RhOslF'> <div className="tarifs__button">Order now</div> </A>
                             </motion.div>
                         </motion.div>
 
@@ -74,7 +74,7 @@ export const Tarifs = () => {
                                 </li>
                             </motion.ul>
                             <motion.div custom={1.2} variants={useSideAnimation(0,200)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                <A path='/'> <div className="tarifs__button">Order now</div> </A>
+                                <A path='https://pay.fondy.eu/s/GiC9DDd0'> <div className="tarifs__button">Order now</div> </A>
                             </motion.div>
                         </motion.div>
                     </div>

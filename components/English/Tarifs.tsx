@@ -33,7 +33,7 @@ export const TarifsEnglish = () => {
                                 </li>
                             </motion.ul>
                             <motion.div custom={0.6} variants={useSideAnimation(0, 400)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                <div className="tarifs__button tarifs__button_orange"> <A path='/' width='120px' height='40px' isCenter={true}>Order now</A></div>
+                                <div className="tarifs__button tarifs__button_orange"> <A path='https://pay.fondy.eu/s/oFXlhHTL' width='120px' height='40px' isCenter={true}>Order now</A></div>
                             </motion.div>
                         </motion.div>
 
@@ -62,7 +62,7 @@ export const TarifsEnglish = () => {
                                 </li>
                             </motion.ul>
                             <motion.div custom={1} variants={useSideAnimation(0,400)} style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '-50px' }}>
-                                <div className="tarifs__button tarifs__button_orange"> <A path='/' width='120px' height='40px' isCenter={true}>Order now</A></div>
+                                <div className="tarifs__button tarifs__button_orange"> <A path='https://pay.fondy.eu/s/WP69FII9MRVvDFI' width='120px' height='40px' isCenter={true}>Order now</A></div>
                             </motion.div>
                         </motion.div>
                     </div>

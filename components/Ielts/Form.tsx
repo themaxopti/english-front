@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Api } from '../../api/api';
 import { ModalWindow } from '../ModalWindow';
 
 type Inputs = {
@@ -12,9 +13,10 @@ export const Form = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>()
-    const onSubmit: SubmitHandler<Inputs> = data => {
+    const onSubmit: SubmitHandler<Inputs> =  async (data) => {
         console.log(data, errors)
         setIsOpen(true)
+        await Api.getCourse('ielts',data.email,data.name)
     }
 
     return (

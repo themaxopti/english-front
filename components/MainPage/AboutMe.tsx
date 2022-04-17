@@ -22,7 +22,7 @@ export const AboutMe: NextPage = () => {
     }, [])
 
     return (
-        <motion.div viewport={{ once: true, amount: 0.3 }}
+        <motion.div viewport={{ once: true, amount: 0.6 }}
             initial="hidden"
             whileInView="visible"
             className='section about-me-section'
@@ -47,7 +47,7 @@ export const AboutMe: NextPage = () => {
                     className={s["about-me__rectangle"]}
                     src="/images/about-me-rect.svg" alt="" />
                 <motion.div
-                    custom={0.5}
+                    custom={0.7}
                     variants={useSideAnimation(0, 100)}
                     className={s['about-me__rect']}
                 ></motion.div>
@@ -55,23 +55,23 @@ export const AboutMe: NextPage = () => {
                 <div className={s['about-me__wrap']}>
                     <div className={s['about-me__image']}>
                         <motion.img
-                            custom={0.6}
-                            variants={useShow()}
+                            custom={0.9}
+                            variants={useSideAnimation(-200)}
                             src="/images/Tanya.jpg"
                             alt=""
                         />
                     </div>
                     <div className={s['about-me__content']}>
                         <motion.div
-                            custom={0.7}
+                            custom={1}
                             variants={useSideAnimation(100)}
                         ><strong>Татьяна Лозик</strong></motion.div>
                         <motion.div
-                            custom={0.7}
+                            custom={1.1}
                             variants={useSideAnimation(-100)}
                         ><A path='/'><strong>@english.dreamteacher</strong></A></motion.div>
                         <motion.div
-                            custom={0.8}
+                            custom={1.3}
                             variants={useSideAnimation(0, 200)}
                             className={s['about-me__main-text']}
                         >
