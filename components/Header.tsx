@@ -68,7 +68,8 @@ export const Header: NextPage = () => {
                 <li className={s["header-comp__li-links"]}>
                   <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
                   <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
-                  <div className={s['header-comp__li-thin']}><A path='/general-english'>Общий английский</A></div>
+                  <div className={s['header-comp__li-thin']}><A path='/general-english'>Экспресс-курс "Английский для новичков"</A></div>
+                  <div><A path='/consultation'>Бесплатная консультация</A></div>
                 </li>
                 <li className={'instagram-logo'}>
                   <div> <A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'> English_dreamteacher </A></div>
@@ -92,7 +93,8 @@ export const Header: NextPage = () => {
                   <ul>
                     <li><A path='/'>Главная</A></li>
                     <li><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></li>
-                    <li><A path='/general-english'>Общий английский</A></li>
+                    <li><A path='/general-english'>экспресс-курс "Английский для новичков"</A></li>
+                    <li><A path='/consultation'>Бесплатная консультация</A></li>
 
                     <li onClick={openNavbar}> <A path='/#aboutMe'> Обо мне</A> </li>
                     <li onClick={openNavbar}><A path='/#aproach'>Мой подход</A></li>

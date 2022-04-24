@@ -12,6 +12,20 @@
     row-gap: 40px;
 
 
+    &__telegram{
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        grid-template-rows: 20px 30px;
+        gap: 0.5rem;
+        &__icon{
+            position: relative;
+            img{
+                @include object_fit_contain;
+            }
+        }
+    }
+
+
     &__payment {
         display: grid;
         grid-template-columns: 100px 100px;

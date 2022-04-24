@@ -69,7 +69,7 @@ export const AboutMe: NextPage = () => {
                         <motion.div
                             custom={1.1}
                             variants={useSideAnimation(-100)}
-                        ><A path='/'><strong>@english.dreamteacher</strong></A></motion.div>
+                        ><A isBlank={true} path='https://www.instagram.com/english_dreamteacher/?utm_medium=copy_link'><strong>@english.dreamteacher</strong></A></motion.div>
                         <motion.div
                             custom={1.3}
                             variants={useSideAnimation(0, 200)}

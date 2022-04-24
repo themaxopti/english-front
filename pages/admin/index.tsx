@@ -1,12 +1,15 @@
 import axios from 'axios'
+import classNames from 'classnames'
 import { GetServerSideProps } from 'next'
-import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import Router, { useRouter } from 'next/router'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Api, Video } from '../../api/api'
+import { A } from '../../components/Link'
 import { Wrapper } from '../../layouts/Wrapper'
 import { addVideo } from '../../store/reducers/admin.reducer'
 import { AppState, useAppDispatch } from '../../store/store'
+import s from '../../styles/Admin/Admin.module.scss'
 
 
 const User = ({ email, phone, course }: Video) => {
@@ -38,25 +41,74 @@ export interface ResponseType {
     data: Video[]
 }
 
+export const navbarItems = [
+    { title: 'Пользователи,получившие видео', link: "" },
+    { title: 'Ielts «Стандарт»', link: "" },
+    { title: 'ielts «Углубленная подготовка»', link: "" },
+    { title: 'Общий английский «Стандарт»', link: "" },
+    { title: 'Общий английский Углубленная подготовка', link: "" },
+]
+
+interface NavbarItemProps {
+    title: string
+    link: string
+    index: number | string,
+    active: any
+    setActive: any
+}
+
+export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItemProps) => {
+
+    const router = useRouter()
+
+
+    function click() {
+        router.push({ query: { active: index } })
+        setActive(index)
+    }
+
+    // const isActive = router.query.active == index || active == index ? true : false
+
+    return (
+        // @ts-ignore
+        <div onClick={() => click()}
+            style={{ cursor: "pointer" }} className={`admin__navbar-item ${index == active ? 'admin__navbar-item_active' : ''}`}>
+            {title}
+        </div>
+    )
+}
+
 const Admin = ({ isAdmin, users }: Props) => {
+    const router = useRouter()
+
+
+    const [active, setActive] = useState(router.query.active || 0)
 
     const dispatch = useAppDispatch()
-    console.log(users)
     const videos = useSelector((state: AppState) => state.admin.videos)
 
     useEffect(() => {
         dispatch(addVideo(users))
     }, [])
 
+
+
     return (
         <Wrapper>
             <div className="section">
-                <div className="section__content" style={{ minHeight: '800px' }}>
+                <div className="section__content section__content_p" style={{ minHeight: '800px' }}>
                     <div className="admin">
                         <div className="admin__navbar">
-                            <div onClick={async () => await Api.logout()} className="admin__navbar-item">
-                                Пользователи,получившие видео
-                            </div>
+                            {
+                                navbarItems.map((el, i) => <NavbarItem
+                                    index={i}
+                                    key={i}
+                                    link={el!.link}
+                                    title={el.title}
+                                    active={active}
+                                    setActive={setActive}
+                                />)
+                            }
                         </div>
                         <div className="admin__content">
                             <div className="users-videos">

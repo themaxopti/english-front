@@ -7,15 +7,14 @@ export const FirstPage = () => {
     return (
         <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" className='section' style={{ background: '#FFE6B3' }}>
 
-        <div className={s["image"]}>
-            <img src="/images/English-image.jpg" alt="" />
-        </div>
-
+            <div className={s["image"]}>
+                <img src="/images/English-image.jpg" alt="" />
+            </div>
             <div className="section__content section__content_p">
                 <div className="course-first-page">
                     <div className="course-first-page__table" style={{ background: 'white' }}>
                         <div className='course-first-page__wrap'>
-                            <motion.div custom={0.5} variants={useSideAnimation(100)} className='course-first-page__title'><h1>Курс <br />БЫСТРАЯ АДАПТАЦИЯ ЗАГРАНИЦЕЙ</h1></motion.div>
+                            <motion.div custom={0.5} variants={useSideAnimation(100)} className='course-first-page__title'><h1>Экспресс-курс <br />"Английский для новичков"</h1></motion.div>
                             <motion.div custom={0.6} variants={useSideAnimation(-100)} className='course-first-page__level'>(уровень Beginer)</motion.div>
                             <motion.div custom={0.7} variants={useSideAnimation(200)} className='course-first-page__program'>(Продолжительность: 4 недели)</motion.div>
                         </div>

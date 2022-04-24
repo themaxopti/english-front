@@ -4,11 +4,13 @@ import { Action } from 'redux'
 import { createWrapper, HYDRATE } from 'next-redux-wrapper'
 import testReducer from './reducers/tags.reducer'
 import adminReducer from './reducers/admin.reducer'
+import coursesReducer from './reducers/courses.reducer'
 import { useDispatch } from 'react-redux'
 
 const rootReducer = combineReducers({
   test: testReducer,
-  admin: adminReducer
+  admin: adminReducer,
+  courses: coursesReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

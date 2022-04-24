@@ -6,7 +6,7 @@ import { FirstPage } from '../../components/Ielts/FirstPage'
 import { Form } from '../../components/Ielts/Form'
 import { How } from '../../components/Ielts/How'
 import { IeltsQuestions } from '../../components/Ielts/IeltsQuestions'
-import { Tarifs } from '../../components/Ielts/Tarifs'
+import { MemoTarifs, Tarifs } from '../../components/Ielts/Tarifs'
 import { Wrapper } from '../../layouts/Wrapper'
 
 const IeltsOfYourDream: NextPage = () => {
@@ -20,7 +20,7 @@ const IeltsOfYourDream: NextPage = () => {
       <Description />
       <How />
       <IeltsQuestions />
-      <Tarifs />
+      <MemoTarifs />
       <Form />
     </Wrapper>
     </>

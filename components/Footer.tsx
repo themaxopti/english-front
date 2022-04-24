@@ -6,13 +6,18 @@ import { A } from './Link'
 
 export const Footer = () => {
     return (
-        <div className='section' style={{backgroundColor:'#161721'}}>
+        <div className='section' style={{ backgroundColor: '#161721' }}>
             <div className="section__content section__content_p">
                 <div className={s['footer']}>
                     <nav>
                         <div>Контакты</div>
                         <div>info@dreamteacher.co</div>
-                        <div>+380 66 720 90 17</div>
+                        <div className={s['footer__telegram']}>
+                            <div className={s['footer__telegram__icon']}>
+                                <img src="/images/telegram.png" alt="" />
+                            </div>
+                            <div>+380 66 720 90 17</div>
+                        </div>
                     </nav>
                     <nav>
                         <li className={'instagram-logo'}>
