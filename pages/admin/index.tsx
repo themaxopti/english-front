@@ -136,24 +136,24 @@ const Admin = ({ isAdmin, users }: Props) => {
 }
 
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 
-//     const data = await Api.auth(context)
+    const data = await Api.auth(context)
 
-//     if (!data.isAdmin) {
-//         context.res.setHeader("location", "/admin/login")
-//         context.res.statusCode = 302
-//         context.res.end()
-//     }
+    if (!data.isAdmin) {
+        context.res.setHeader("location", "/admin/login")
+        context.res.statusCode = 302
+        context.res.end()
+    }
 
-//     const response = await Api.getAllCourses(context)
+    const response = await Api.getAllCourses(context)
 
-//     return {
-//         props: {
-//             isAdmin: data.isAdmin,
-//             users: response?.data.data
-//         }
-//     }
-// }
+    return {
+        props: {
+            isAdmin: data.isAdmin,
+            users: response?.data.data
+        }
+    }
+}
 
 export default Admin
