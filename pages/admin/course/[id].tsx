@@ -44,29 +44,29 @@ const Course = ({ users }: Props) => {
 
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+// export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    // const data = await Api.getCourse(context)
-    const data = await Api.auth(context)
-
-
-    if (!data.isAdmin) {
-        context.res.setHeader("location", "/admin/login")
-        context.res.statusCode = 302
-        context.res.end()
-    }
-
-    // @ts-ignore
-    const response = await Api.getPeopleOfCourse(context.query.id)
+//     // const data = await Api.getCourse(context)
+//     const data = await Api.auth(context)
 
 
-    return {
-        props: {
-            isAdmin: data.isAdmin,
-            users: response?.data
-        }
-    }
-}
+//     if (!data.isAdmin) {
+//         context.res.setHeader("location", "/admin/login")
+//         context.res.statusCode = 302
+//         context.res.end()
+//     }
+
+//     // @ts-ignore
+//     const response = await Api.getPeopleOfCourse(context.query.id)
+
+
+//     return {
+//         props: {
+//             isAdmin: data.isAdmin,
+//             users: response?.data
+//         }
+//     }
+// }
 
 
 
