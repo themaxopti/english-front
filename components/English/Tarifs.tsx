@@ -155,7 +155,7 @@ export const TarifsEnglish = () => {
                                         <div>Записалось на курс {generalEnglishMain.amount}</div>
                                     </li> */}
                                     <li>
-                                         <div>Максимально количество мест:15</div>
+                                         <div>Максимально количество мест:20</div>
                                         <div>Записалось на курс:0</div>
                                     </li>
                                 </motion.ul>
