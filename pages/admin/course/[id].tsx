@@ -102,28 +102,28 @@ const Course = ({ users }: Props) => {
 
 
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 
-//     // const data = await Api.getCourse(context)
-//     const data = await Api.auth(context)
+    // const data = await Api.getCourse(context)
+    const data = await Api.auth(context)
 
 
-//     if (!data.isAdmin) {
-//         context.res.setHeader("location", "/admin/login")
-//         context.res.statusCode = 302
-//         context.res.end()
-//     }
+    if (!data.isAdmin) {
+        context.res.setHeader("location", "/admin/login")
+        context.res.statusCode = 302
+        context.res.end()
+    }
 
-//     // @ts-ignore
-//     const response = await Api.getPeopleOfCourse(context.query.id)
+    // @ts-ignore
+    const response = await Api.getPeopleOfCourse(context.query.id)
 
-//     return {
-//         props: {
-//             isAdmin: data.isAdmin,
-//             users: response?.data
-//         }
-//     }
-// }
+    return {
+        props: {
+            isAdmin: data.isAdmin,
+            users: response?.data
+        }
+    }
+}
 
 
 export default Course

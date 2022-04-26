@@ -1,0 +1,10 @@
+.oy {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.admin__navbar-item_active {
+  font-weight: bold;
+}
+/*# sourceMappingURL=Admin.module.css.map */
