@@ -39,7 +39,7 @@ interface GetGeneralEnglishCourseResponse {
 }
 
 const url = 'http://31.131.24.36:5000'
-
+// s
 export interface User {
     id: string
     name: string
