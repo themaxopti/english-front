@@ -4,7 +4,7 @@ import { CourseData, CoursGeneralData } from "../store/reducers/courses.reducer"
 
 const api = axios.create({
     withCredentials: true,
-    baseURL: 'http://localhost:5000/api/',
+    baseURL: 'http://31.131.24.36:5000/',
     // baseURL:'http://localhost:4000/api',
     responseType: 'json',
 })
@@ -37,6 +37,8 @@ interface GetGeneralEnglishCourseResponse {
     message: string
     data: CoursGeneralData
 }
+
+const url = 'http://31.131.24.36:5000'
 
 export interface User {
     id: string
@@ -94,7 +96,7 @@ export class Api {
     }
 
     static async auth(context: any) {
-        const response = await fetch(`http://localhost:5000/api/authAdmin`, {
+        const response = await fetch(`${url}/api/authAdmin`, {
             method: 'GET',
             credentials: 'include',
             // @ts-ignore

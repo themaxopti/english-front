@@ -52,6 +52,7 @@ export const TarifsEnglish = () => {
     const dispatch = useAppDispatch()
 
     function openModal(productId: number | string, isMax: boolean | null) {
+        return
         if (isMax) {
             return
         }
@@ -149,9 +150,13 @@ export const TarifsEnglish = () => {
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
-                                    <li>
+                                    {/* <li>
                                         {generalEnglishMain.maxPeople && <div>Максимально количество мест:{generalEnglishMain.maxPeople || ''}</div>}
                                         <div>Записалось на курс {generalEnglishMain.amount}</div>
+                                    </li> */}
+                                    <li>
+                                         <div>Максимально количество мест:15</div>
+                                        <div>Записалось на курс:0</div>
                                     </li>
                                 </motion.ul>
                                 <motion.div custom={0.6} variants={useSideAnimation(0, 400)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -184,9 +189,13 @@ export const TarifsEnglish = () => {
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
-                                    <li>
+                                    {/* <li>
                                         {generalEnglishDeep.maxPeople && <div>Максимально количество мест:{generalEnglishDeep.maxPeople || ''}</div>}
                                         <div>Записалось на курс {generalEnglishDeep.amount}</div>
+                                    </li> */}
+                                    <li>
+                                        <div>Максимально количество мест:5</div>
+                                        <div>Записалось на курс:0</div>
                                     </li>
                                 </motion.ul>
                                 <motion.div custom={1} variants={useSideAnimation(0, 400)} style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '-50px' }}>

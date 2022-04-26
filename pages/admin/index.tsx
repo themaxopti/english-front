@@ -30,7 +30,6 @@ const User = ({ email, phone, course }: Video) => {
     )
 }
 
-
 interface Props {
     isAdmin: boolean,
     users: Video[]
@@ -42,17 +41,17 @@ export interface ResponseType {
 }
 
 export const navbarItems = [
-    { title: 'Пользователи,получившие видео', link: "" },
-    { title: 'Ielts «Стандарт»', link: "" },
-    { title: 'ielts «Углубленная подготовка»', link: "" },
-    { title: 'Общий английский «Стандарт»', link: "" },
-    { title: 'Общий английский Углубленная подготовка', link: "" },
+    { title: 'Пользователи,получившие видео', link: "/admin" },
+    { title: 'Ielts «Стандарт»', link: "/admin/course/1" },
+    { title: 'ielts «Углубленная подготовка»', link: "/admin/course/2" },
+    { title: 'Общий английский «Стандарт»', link: "/admin/course/3" },
+    { title: 'Общий английский Углубленная подготовка', link: "/admin/course/4" },
 ]
 
 interface NavbarItemProps {
     title: string
     link: string
-    index: number | string,
+    index: number | string
     active: any
     setActive: any
 }
@@ -61,10 +60,9 @@ export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItem
 
     const router = useRouter()
 
-
     function click() {
-        router.push({ query: { active: index } })
         setActive(index)
+        router.push({ pathname: link, query: { active: index } })
     }
 
     // const isActive = router.query.active == index || active == index ? true : false
@@ -78,9 +76,10 @@ export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItem
     )
 }
 
+
+
 const Admin = ({ isAdmin, users }: Props) => {
     const router = useRouter()
-
 
     const [active, setActive] = useState(router.query.active || 0)
 
@@ -90,7 +89,6 @@ const Admin = ({ isAdmin, users }: Props) => {
     useEffect(() => {
         dispatch(addVideo(users))
     }, [])
-
 
 
     return (
@@ -123,8 +121,7 @@ const Admin = ({ isAdmin, users }: Props) => {
                                         phone={video.phone}
                                         course={video.course}
                                         email={video.email}
-                                    />
-                                    )
+                                    />)
                                 }
                             </div>
                         </div>

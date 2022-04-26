@@ -29,8 +29,6 @@ const slice = createSlice({
             console.log(action.payload)
             // @ts-ignore
             state.videos = [...action.payload]
-            debugger
-
         }
     }
 })
