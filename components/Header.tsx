@@ -66,7 +66,7 @@ export const Header: NextPage = () => {
             <div className={s['header-comp__content']}>
               <ul>
                 <li className={s["header-comp__li-links"]}>
-                  <div className={s['header-comp__li-thin']}><A path='/'>Главная</A></div>
+                  <div className={s['header-comp__li-thin']}><A path='/'>Главнаяzz</A></div>
                   <div className={s['header-comp__li-thin']}><A path='/ielts-of-your-dream'>Подготовка к IELTS</A></div>
                   <div className={s['header-comp__li-thin']}><A path='/general-english'>Экспресс-курс "Английский для новичков"</A></div>
                   <div><A path='/consultation'>Бесплатная консультация</A></div>
