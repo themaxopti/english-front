@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Api } from '../../api/api';
@@ -13,10 +14,18 @@ export const Form = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>()
-    const onSubmit: SubmitHandler<Inputs> =  async (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data, errors)
         setIsOpen(true)
-        await Api.getCourse('ielts',data.email,data.name)
+        await Api.getCourse('ielts', data.email, data.name)
+    }
+
+    const testSend = async () => {
+        try {
+            const response = await axios.get('http://31.131.24.36:5000/api/getVideos')
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
@@ -31,7 +40,7 @@ export const Form = () => {
                         <form onSubmit={handleSubmit(onSubmit)} className='form-contact' action="">
                             <span style={{ fontWeight: '600' }}>ПОЛУЧИТЬ ДОСТУП К БЕСПЛАТНОМУ УРОКУ</span>
                             <div className='form-contact__email form-contact__inp'>
-                                <div>email</div>
+                                <div onClick={testSend}>email</div>
                                 <input {...register("email", {
                                     required: 'Заполните все поля',
                                     pattern: {

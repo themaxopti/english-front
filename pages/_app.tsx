@@ -11,7 +11,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
         <>
             <Head>
                 <link rel="shortcut icon" href="/images/logoHead.svg" />
-                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+                {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta> */}
             </Head>
             <Component {...pageProps} />
         </>

@@ -247,8 +247,54 @@ const PublickOffer = () => {
                                     9.4. Стороны дают друг другу согласие на обработку и хранение персональных данных, которые становятся известными им в связи с заключением настоящего Договора, в пределах, в которых это необходимо в соответствии с требованиями действующего законодательства Украины.
                                 </p>
 
+                            </div>
+                            <div className='inform-block__box'>
+                                <h2>Реквизиты Исполнителя</h2>
                                 <p>
-                                    Реквизиты Исполнителя
+                                    Для оплаты в гривнях
+                                </p>
+                                <p>
+                                    Establishment of a bank - PrivatBank <br />
+                                    MFI Bank - 305299 <br />
+                                    Recipient of payment - LOZYK TETIANA <br />
+                                    IBAN - UA833052990000026202664828775 <br />
+                                    The account of the recipient - 26202664828775 <br />
+                                    Card сurrency - UAH <br />
+                                    USREOU code of the recipient - 3507911240 <br />
+                                    Payment description - Deposit funds into the account LOZYK TETIANA <br />
+                                </p>
+                            </div>
+                            <div className='inform-block__box'>
+                                <h2>Для оплаты в долларах:</h2>
+                                <p>
+                                    BENEFICIARY <br />
+                                    Recipient (full name of the recipient in Latin) - LOZYK TETIANA, index 53207, Ukraine,region Dnipropetrovska,district  <br />
+                                    Nikopolskyi,city Nikopol,street Volodimira Yemtsia,building 43 <br />
+
+                                </p>
+                                <p>
+                                    IBAN - UA783052990000026206699684418
+                                </p>
+                                <p>
+                                    ACCOUNT <br />
+                                    The account of the recipient - 4731219116593553 <br />
+                                </p>
+                                <p>
+                                    BANK OF BENEFICIARY  <br />
+                                    Beneficiary's bank - PRIVATBANK, 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE <br />
+                                    SWIFT CODE/BIC: PBANUA2X <br />
+                                </p>
+                                <p>
+                                    CORRESPONDENT ACCOUNT <br />
+                                    Recipient bank account in correspondent bank - 0011000080 <br />
+                                </p>
+                                <p>
+                                    INTERMEDIARY BANK <br />
+                                    Correspondent bank - JP MORGAN CHASE BANK <br />
+                                    SWIFT CODE/BIC: CHASUS33 <br />
+                                </p>
+                                <p>
+                                    Card сurrency - USD
                                 </p>
                             </div>
                         </div>
