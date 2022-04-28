@@ -9,7 +9,6 @@ type Inputs = {
     name: string,
 }
 
-// sa
 
 export const Form = () => {
 
