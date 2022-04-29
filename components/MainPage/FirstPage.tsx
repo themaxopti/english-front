@@ -8,12 +8,12 @@ import { A } from '../Link'
 import { motion } from 'framer-motion'
 import { textAnimation, imgAnimation, useSideAnimation, useImgAnimation } from './motion'
 import { ModalWindow } from '../ModalWindow'
+import { Api } from '../../api/api'
 
 
 
 export const FirstPage: NextPage = () => {
 
- 
     const ref = useRef() as React.MutableRefObject<HTMLInputElement>
     const whyRef = useSelector((state: AppState) => state.test.whyDiv)
     const whyRefTop = whyRef?.getBoundingClientRect().top
@@ -41,9 +41,10 @@ export const FirstPage: NextPage = () => {
         })
     }
 
+   
+
     return (
         <>
-            
             <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" className='section section_fullscren' ref={ref} style={{ overflow: 'hidden' }}>
                 <div className={s['main-image']}>
                     <div className={classes}></div>
@@ -58,7 +59,7 @@ export const FirstPage: NextPage = () => {
                 <motion.div className="section__content section__content_p">
                     <div className={s["first-page"]}>
                         <motion.h1
-                            custom={1} variants={useSideAnimation(200)} className={s['first-page__h']}
+                             custom={1} variants={useSideAnimation(200)} className={s['first-page__h']}
                         >
                             Welcome to Dream Teacher School</motion.h1>
                         <motion.div

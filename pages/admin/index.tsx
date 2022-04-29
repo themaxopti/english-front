@@ -12,7 +12,7 @@ import { AppState, useAppDispatch } from '../../store/store'
 import s from '../../styles/Admin/Admin.module.scss'
 
 
-const User = ({ email, phone, course }: Video) => {
+export const User = ({ email, phone, course }: Video) => {
     return (
         <>
             <div className="user-video-card">
@@ -24,6 +24,22 @@ const User = ({ email, phone, course }: Video) => {
                 </div>
                 <div className="user-video-card__course">
                     {course}
+                </div>
+            </div>
+
+
+            <div className="user-video-card__mobile">
+                <div className="user-video-card__email">
+                    <div className='user-video-card__mobile_title'>email:</div>
+                    <div className='fluid'>{email}</div>
+                </div>
+                <div className="user-video-card__phone">
+                    <div className='user-video-card__mobile_title'>phone:</div>
+                    <div className='fluid'>{phone}</div>
+                </div>
+                <div className="user-video-card__course">
+                    <div className='user-video-card__mobile_title'>course:</div>
+                    <div className='fluid'>{course}</div>
                 </div>
             </div>
         </>
@@ -46,6 +62,7 @@ export const navbarItems = [
     { title: 'ielts «Углубленная подготовка»', link: "/admin/course/2" },
     { title: 'Общий английский «Стандарт»', link: "/admin/course/3" },
     { title: 'Общий английский Углубленная подготовка', link: "/admin/course/4" },
+    { title: 'Пользователи,записавшиеся на консультацию', link: "/admin/consultation" }
 ]
 
 interface NavbarItemProps {
@@ -115,14 +132,16 @@ const Admin = ({ isAdmin, users }: Props) => {
                                     <div className="users-videos__titles-phone">phone</div>
                                     <div className="users-videos__titles-phone">course</div>
                                 </div>
-                                {
-                                    videos?.map((video, i) => <User
-                                        key={i}
-                                        phone={video.phone}
-                                        course={video.course}
-                                        email={video.email}
-                                    />)
-                                }
+                                <div className="user-videos__content">
+                                    {
+                                        videos?.map((video, i) => <User
+                                            key={i}
+                                            phone={video.phone}
+                                            course={video.course}
+                                            email={video.email}
+                                        />)
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,24 +152,53 @@ const Admin = ({ isAdmin, users }: Props) => {
 }
 
 
+// @ts-ignore
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    try {
 
-    const data = await Api.auth(context)
+        const data = await Api.auth(context)
 
-    if (!data.isAdmin) {
-        context.res.setHeader("location", "/admin/login")
-        context.res.statusCode = 302
-        context.res.end()
-    }
+        if (!data.isAdmin) {
+            context.res.setHeader("location", "/admin/login")
+            context.res.statusCode = 302
+            context.res.end()
+        }
 
-    const response = await Api.getAllCourses(context)
+        const response = await Api.getAllCourses(context)
 
-    return {
-        props: {
-            isAdmin: data.isAdmin,
-            users: response?.data.data
+        return {
+            props: {
+                isAdmin: data.isAdmin,
+                users: response?.data.data
+            }
+        }
+
+    } catch (e) {
+        console.log(e);
+        return {
+            redirect: {
+                destination: '/admin/login',
+                statusCode: 307
+            }
         }
     }
+
+    // const data = await Api.auth(context)
+
+    // if (!data.isAdmin) {
+    //     context.res.setHeader("location", "/admin/login")
+    //     context.res.statusCode = 302
+    //     context.res.end()
+    // }
+
+    // const response = await Api.getAllCourses(context)
+
+    // return {
+    //     props: {
+    //         isAdmin: data.isAdmin,
+    //         users: response?.data.data
+    //     }
+    // }
 }
 
 export default Admin

@@ -53,6 +53,21 @@
     }
 }
 
+@media(max-width:842px){
+    .how{
+        h2{
+            transform: translateY(100px);
+            position: relative;
+            z-index: 10;
+            // padding-bottom: 40px;
+            // margin-top: 300px;
+        }
+        &__text-two{
+            margin-top: 60px;
+        }
+    }   
+}
+
 .with-color {
     background: -webkit-linear-gradient(180deg, rgb(24, 24, 37), rgb(37, 26, 64) 49%);
     background: -moz-linear-gradient(180deg, rgb(24, 24, 37), rgb(37, 26, 64) 49%);

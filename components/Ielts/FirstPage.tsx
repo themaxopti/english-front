@@ -16,6 +16,15 @@ export const FirstPage = () => {
                             <motion.div custom={1.1} variants={useSideAnimation(-100)} className='course-first-page__title'><h1>Курс <br /> IELTS of YOUR DREAM</h1></motion.div>
                             <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__level'>(уровень Upper-intermediate, Advanced)</motion.div>
                             <motion.div custom={1.5} variants={useSideAnimation(-100)} className='course-first-page__program'>ПРОГРАММА КУРСА (8 недель= 2 модуля)</motion.div>
+                            <motion.div className='course-first-page__start start-course'>
+                                <div className='start-course__block'>
+                                    <motion.div custom={1.3} variants={useSideAnimation(-200,-200)} className='start-course__one start-course__line'></motion.div>
+                                    <motion.div custom={1.5} variants={useSideAnimation(200,-200)}  className='start-course__two start-course__line'></motion.div>
+                                    <motion.div custom={1.7} variants={useSideAnimation(200,200)}  className='start-course__three start-course__line'></motion.div>
+                                    <motion.div custom={1.9} variants={useSideAnimation(-200,200)} className='start-course__four start-course__line'></motion.div>
+                                    <motion.div custom={2.1} variants={useSideAnimation(-500)} className='start-course__text'>Старт 6 июня</motion.div>
+                                </div>
+                            </motion.div>
                         </div>
 
                         <div className='course-first-page__description description-block'>

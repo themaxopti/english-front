@@ -2,9 +2,9 @@ import axios from "axios";
 import { ResponseType } from "../pages/admin";
 import { CourseData, CoursGeneralData } from "../store/reducers/courses.reducer";
 
-const api = axios.create({
+export const api = axios.create({
     withCredentials: true,
-    baseURL: 'http://31.131.24.36:5000/',
+    baseURL: `${process.env.NODE_ENV == 'development' ? 'http://localhost:5000/api' : 'https://yourdreamteacher-back.herokuapp.com/api'}`,
     // baseURL:'http://localhost:4000/api',
     responseType: 'json',
 })
@@ -38,7 +38,16 @@ interface GetGeneralEnglishCourseResponse {
     data: CoursGeneralData
 }
 
-const url = 'http://31.131.24.36:5000'
+interface Consultation {
+    phone: string
+    email: string
+    name: string
+    messanger: string
+}
+
+type NewPeopleOnConsultation = (phone: string, email: string, name: string, messanger: string) => any
+
+const url = `${process.env.NODE_ENV == 'development' ? 'http://localhost:5000' : 'https://yourdreamteacher-back.herokuapp.com'}`
 // s
 export interface User {
     id: string
@@ -91,7 +100,7 @@ export class Api {
             //     }
             // })
         } catch (e) {
-
+            console.log(e)
         }
     }
 
@@ -107,6 +116,10 @@ export class Api {
         })
 
         return await response.json()
+    }
+
+    static async authAxios() {
+        return await api.get('authAdmin')
     }
 
     static async pay(email: string, phone: string, name: string, productId: number | string | null) {
@@ -139,10 +152,27 @@ export class Api {
         }
     }
 
-
     static async getPeopleOfCourse(productId: number | string) {
         try {
             return await api.get<User[]>(`getUsersOfCourse/${productId}`)
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    static async getPeopleOfConsultation() {
+        try {
+            return await api.get<User[]>(`getConsultations`)
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    static newPeopleOnConsultation: NewPeopleOnConsultation = async (name, email, phone, messanger) => {
+        try {
+            return await api.post(`newUserConsultation`,{
+                name, email, phone, messanger
+            })
         } catch (e) {
             console.log(e);
         }
