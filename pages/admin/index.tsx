@@ -107,6 +107,9 @@ const Admin = ({ isAdmin, users }: Props) => {
         dispatch(addVideo(users))
     }, [])
 
+    const logout = async function () {
+        await Api.logout()
+    }
 
     return (
         <Wrapper>
@@ -124,6 +127,7 @@ const Admin = ({ isAdmin, users }: Props) => {
                                     setActive={setActive}
                                 />)
                             }
+                            <div onClick={logout}>Выйти</div>
                         </div>
                         <div className="admin__content">
                             <div className="users-videos">
@@ -155,20 +159,27 @@ const Admin = ({ isAdmin, users }: Props) => {
 // @ts-ignore
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
+        // const data = await Api.auth(context)
+        const data = await Api.authAxios(context)
+        console.log(data.data);
 
-        const data = await Api.auth(context)
-
-        if (!data.isAdmin) {
+        if (!data.data.isAdmin) {
             context.res.setHeader("location", "/admin/login")
             context.res.statusCode = 302
             context.res.end()
+            // return {
+            //     redirect: {
+            //         destination: '/admin/login',
+            //         statusCode: 307
+            //     }
+            // }
         }
 
         const response = await Api.getAllCourses(context)
 
         return {
             props: {
-                isAdmin: data.isAdmin,
+                // isAdmin: data.isAdmin,
                 users: response?.data.data
             }
         }

@@ -45,7 +45,7 @@ interface Consultation {
     messanger: string
 }
 
-type NewPeopleOnConsultation = (phone: string, email: string, name: string, messanger: string) => any
+type NewPeopleOnConsultation = (data: any) => any
 
 const url = `${process.env.NODE_ENV == 'development' ? 'http://localhost:5000' : 'https://yourdreamteacher-back.herokuapp.com'}`
 // s
@@ -56,6 +56,15 @@ export interface User {
     email: string
     moduleAmount: number
     productId: number | string
+}
+
+export interface FreeTimesData {
+    time: string
+}
+
+interface FreeTimes {
+    message: string
+    data: FreeTimesData[]
 }
 
 export class Api {
@@ -118,8 +127,10 @@ export class Api {
         return await response.json()
     }
 
-    static async authAxios() {
-        return await api.get('authAdmin')
+    static async authAxios(context:any) {
+        return await api.get('authAdmin',{withCredentials:true,headers:{
+            Cookie: context.req.headers.cookie
+        }})
     }
 
     static async pay(email: string, phone: string, name: string, productId: number | string | null) {
@@ -168,13 +179,27 @@ export class Api {
         }
     }
 
-    static newPeopleOnConsultation: NewPeopleOnConsultation = async (name, email, phone, messanger) => {
+    static newPeopleOnConsultation: NewPeopleOnConsultation = async (data) => {
         try {
-            return await api.post(`newUserConsultation`,{
-                name, email, phone, messanger
-            })
+            return await api.post(`newUserConsultation`, data)
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    static getFullDays = async () => {
+        try {
+            return await api.get<{ message: string, data: number[] }>(`getFullDays`)
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    static getFreeTimes = async (day: number) => {
+        try {
+            return await api.post<FreeTimes>(`checkFreeDays`, { day })
+        } catch (e) {
+            console.log(e)
         }
     }
 }

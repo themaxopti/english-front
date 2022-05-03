@@ -21,9 +21,22 @@ export const ModalWindow = ({ children, isOpen, setIsopen }: Props) => {
     }
 
     return (
-        <motion.div style={{ display: `${isOpen ? 'block' : 'none'}` }} viewport={{ once: true }} initial="hidden" whileInView="visible" className={s['modal-window']}>
+        <motion.div
+            style={{ display: `${isOpen ? 'block' : 'none'}` }}
+            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            className={s['modal-window']}
+        >
             <div onClick={() => closeWindow()} className={s['modal-window__wrap']}>
-                <motion.div onClick={(e) => e.stopPropagation()} animate={isOpen ? "visible" : "hidden"} viewport={{ once: true }} custom={0.5} variants={useSideAnimation(200)} className={s["modal-window__block"]}>
+                <motion.div
+                    onClick={(e) => e.stopPropagation()}
+                    animate={isOpen ? "visible" : "hidden"}
+                    viewport={{ once: true }}
+                    custom={0.5}
+                    variants={useSideAnimation(200)}
+                    className={s["modal-window__block"]}
+                >
                     {children}
                 </motion.div>
             </div>

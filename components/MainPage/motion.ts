@@ -131,6 +131,34 @@ export const useSideAnimation = (x: number, y = 0): {} => {
 
 }
 
+
+export const useSideAnimationDisplay = (x: number, y = 0): {} => {
+
+    const isBig = useMediaQuery({
+        query: '(min-width: 1000px)'
+    })
+
+
+    if (isBig) {
+        return {
+            hidden: {
+                x,
+                y,
+                display: "none"
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                display: "flex",
+                transition: { delay: custom }
+            })
+        }
+    } else {
+        return {}
+    }
+
+}
+
 export const show = {
     hidden: {
         opacity: 0,
