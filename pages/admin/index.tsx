@@ -10,6 +10,7 @@ import { Wrapper } from '../../layouts/Wrapper'
 import { addVideo } from '../../store/reducers/admin.reducer'
 import { AppState, useAppDispatch } from '../../store/store'
 import s from '../../styles/Admin/Admin.module.scss'
+import cookies from "next-cookies"
 
 export const User = ({ email, phone, course }: Video) => {
     return (
@@ -161,7 +162,10 @@ const Admin = ({ isAdmin, users }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         // const data = await Api.auth(context)
-        console.log(context.req.headers);
+        // console.log(context.req.headers);
+        const c = cookies(context)
+        console.log(c);
+        
         // alert(context.req.headers.cookie)
 
         // const data = await Api.authAxios(context)
