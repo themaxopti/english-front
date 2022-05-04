@@ -96,7 +96,7 @@ export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItem
 }
 
 
-
+// @ts-ignore
 const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
     const router = useRouter()
 
@@ -158,6 +158,7 @@ const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
     )
 }
 
+// @ts-ignore
 Admin.getInitialProps = async (ctx) => {
     console.log(ctx.req?.headers!.cookie);
 
