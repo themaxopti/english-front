@@ -161,7 +161,7 @@ const Admin = ({ isAdmin, users }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         const data = await Api.auth(context)
-        console.log(context.req ? { cookie: context.req.headers.cookie } : undefined);
+        // console.log(context.req ? { cookie: context.req.headers.cookie } : undefined);
         // alert(context.req.headers.cookie)
         
         // const data = await Api.authAxios(context)

@@ -121,7 +121,6 @@ export class Api {
             headers: {
                 'Access-Control-Allow-Credentials': true,
                 Cookie: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
-                
             }
         })
 
