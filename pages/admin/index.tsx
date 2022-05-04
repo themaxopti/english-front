@@ -185,7 +185,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         }
 
     } catch (e) {
-        console.log(e);
+        console.log(e)
+        const data = await Api.authAxios(context)
+
         return {
             redirect: {
                 destination: '/admin/login',
