@@ -1,6 +1,6 @@
 import axios from 'axios'
 import classNames from 'classnames'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Router, { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
@@ -50,6 +50,7 @@ interface Props {
     isAdmin: boolean,
     users: Video[]
     context: any
+    some?: string
 }
 
 export interface ResponseType {
@@ -96,7 +97,7 @@ export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItem
 
 
 
-const Admin = ({ isAdmin, users }: Props) => {
+const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
     const router = useRouter()
 
     const [active, setActive] = useState(router.query.active || 0)
@@ -157,65 +158,72 @@ const Admin = ({ isAdmin, users }: Props) => {
     )
 }
 
+Admin.getInitialProps = async (ctx) => {
+    console.log(ctx.req?.headers!.cookie);
+
+    return {
+        some: 'soem'
+    }
+}
 
 // @ts-ignore
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    try {
-        // const data = await Api.auth(context)
-        // console.log(context.req.headers);
-        const c = cookies(context)
-        console.log(c);
-        
-        // alert(context.req.headers.cookie)
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//     try {
+//         // const data = await Api.auth(context)
+//         // console.log(context.req.headers);
+//         const c = cookies(context)
+//         console.log(c);
 
-        // const data = await Api.authAxios(context)
+//         // alert(context.req.headers.cookie)
 
-        // if (!data.isAdmin) {
-        //     // context.res.setHeader("location", "/admin/login")
-        //     // context.res.statusCode = 302
-        //     // context.res.end()
-        //     // return {
-        //     //     redirect: {
-        //     //         destination: '/admin/login',
-        //     //         statusCode: 307
-        //     //     }
-        //     // }
-        // }
+//         // const data = await Api.authAxios(context)
 
-        // const response = await Api.getAllCourses(context)
+//         // if (!data.isAdmin) {
+//         //     // context.res.setHeader("location", "/admin/login")
+//         //     // context.res.statusCode = 302
+//         //     // context.res.end()
+//         //     // return {
+//         //     //     redirect: {
+//         //     //         destination: '/admin/login',
+//         //     //         statusCode: 307
+//         //     //     }
+//         //     // }
+//         // }
 
-        return {
-            props: {
-                // isAdmin: data.isAdmin,
-                // users: response?.data.data,
-            }
-        }
+//         // const response = await Api.getAllCourses(context)
 
-    } catch (e) {
-        return {
-            redirect: {
-                destination: '/admin/login',
-                statusCode: 307
-            }
-        }
-    }
+//         return {
+//             props: {
+//                 // isAdmin: data.isAdmin,
+//                 // users: response?.data.data,
+//             }
+//         }
 
-    // const data = await Api.auth(context)
+//     } catch (e) {
+//         return {
+//             redirect: {
+//                 destination: '/admin/login',
+//                 statusCode: 307
+//             }
+//         }
+//     }
 
-    // if (!data.isAdmin) {
-    //     context.res.setHeader("location", "/admin/login")
-    //     context.res.statusCode = 302
-    //     context.res.end()
-    // }
+//     // const data = await Api.auth(context)
 
-    // const response = await Api.getAllCourses(context)
+//     // if (!data.isAdmin) {
+//     //     context.res.setHeader("location", "/admin/login")
+//     //     context.res.statusCode = 302
+//     //     context.res.end()
+//     // }
 
-    // return {
-    //     props: {
-    //         isAdmin: data.isAdmin,
-    //         users: response?.data.data
-    //     }
-    // }
-}
+//     // const response = await Api.getAllCourses(context)
+
+//     // return {
+//     //     props: {
+//     //         isAdmin: data.isAdmin,
+//     //         users: response?.data.data
+//     //     }
+//     // }
+// }
 
 export default Admin
