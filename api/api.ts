@@ -127,10 +127,13 @@ export class Api {
         return await response.json()
     }
 
-    static async authAxios(context:any) {
-        return await api.get('authAdmin',{withCredentials:true,headers:{
-            Cookie: context.req.headers.cookie
-        }})
+    static async authAxios(context: any) {
+        return await api.get('authAdmin', {
+            withCredentials: true,
+            headers: {
+                Cookie: context.req.headers.cookie
+            }
+        })
     }
 
     static async pay(email: string, phone: string, name: string, productId: number | string | null) {
