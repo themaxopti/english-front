@@ -49,6 +49,7 @@ export const User = ({ email, phone, course }: Video) => {
 interface Props {
     isAdmin: boolean,
     users: Video[]
+    context:any
 }
 
 export interface ResponseType {
@@ -104,6 +105,7 @@ const Admin = ({ isAdmin, users }: Props) => {
     const videos = useSelector((state: AppState) => state.admin.videos)
 
     useEffect(() => {
+        const data = Api.authAxios()
         dispatch(addVideo(users))
     }, [])
 
@@ -160,33 +162,33 @@ const Admin = ({ isAdmin, users }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         const data = await Api.auth(context)
+        console.log(context.req.headers.cookie);
+        // alert(context.req.headers.cookie)
+        
         // const data = await Api.authAxios(context)
-        console.log(data.data);
 
-        if (!data.isAdmin) {
-            // context.res.setHeader("location", "/admin/login")
-            // context.res.statusCode = 302
-            // context.res.end()
-            return {
-                redirect: {
-                    destination: '/admin/login',
-                    statusCode: 307
-                }
-            }
-        }
+        // if (!data.isAdmin) {
+        //     // context.res.setHeader("location", "/admin/login")
+        //     // context.res.statusCode = 302
+        //     // context.res.end()
+        //     // return {
+        //     //     redirect: {
+        //     //         destination: '/admin/login',
+        //     //         statusCode: 307
+        //     //     }
+        //     // }
+        // }
 
         const response = await Api.getAllCourses(context)
 
         return {
             props: {
                 // isAdmin: data.isAdmin,
-                users: response?.data.data
+                users: response?.data.data,
             }
         }
 
     } catch (e) {
-        console.log(e)
-
         return {
             redirect: {
                 destination: '/admin/login',
