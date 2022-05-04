@@ -159,11 +159,11 @@ const Admin = ({ isAdmin, users }: Props) => {
 // @ts-ignore
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
-        // const data = await Api.auth(context)
-        const data = await Api.authAxios(context)
+        const data = await Api.auth(context)
+        // const data = await Api.authAxios(context)
         console.log(data.data);
 
-        if (!data.data.isAdmin) {
+        if (!data.isAdmin) {
             context.res.setHeader("location", "/admin/login")
             context.res.statusCode = 302
             context.res.end()
@@ -186,7 +186,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     } catch (e) {
         console.log(e)
-        const data = await Api.authAxios(context)
 
         return {
             redirect: {
