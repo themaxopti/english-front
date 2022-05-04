@@ -113,14 +113,15 @@ export class Api {
         }
     }
 
-    static async auth(context: any) {
+    static async auth(ctx: any) {
         const response = await fetch(`${url}/api/authAdmin`, {
             method: 'GET',
             credentials: 'include',
             // @ts-ignore
             headers: {
                 'Access-Control-Allow-Credentials': true,
-                Cookie: context.req.headers.cookie
+                Cookie: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
+                
             }
         })
 

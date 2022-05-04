@@ -11,7 +11,6 @@ import { addVideo } from '../../store/reducers/admin.reducer'
 import { AppState, useAppDispatch } from '../../store/store'
 import s from '../../styles/Admin/Admin.module.scss'
 
-
 export const User = ({ email, phone, course }: Video) => {
     return (
         <>
@@ -162,7 +161,7 @@ const Admin = ({ isAdmin, users }: Props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         const data = await Api.auth(context)
-        console.log(context.req.headers.cookie);
+        console.log(context.req ? { cookie: context.req.headers.cookie } : undefined);
         // alert(context.req.headers.cookie)
         
         // const data = await Api.authAxios(context)
