@@ -164,15 +164,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         console.log(data.data);
 
         if (!data.isAdmin) {
-            context.res.setHeader("location", "/admin/login")
-            context.res.statusCode = 302
-            context.res.end()
-            // return {
-            //     redirect: {
-            //         destination: '/admin/login',
-            //         statusCode: 307
-            //     }
-            // }
+            // context.res.setHeader("location", "/admin/login")
+            // context.res.statusCode = 302
+            // context.res.end()
+            return {
+                redirect: {
+                    destination: '/admin/login',
+                    statusCode: 307
+                }
+            }
         }
 
         const response = await Api.getAllCourses(context)
