@@ -105,7 +105,7 @@ const Admin = ({ isAdmin, users }: Props) => {
 
     useEffect(() => {
         const data = Api.authAxios()
-        dispatch(addVideo(users))
+        // dispatch(addVideo(users))
     }, [])
 
     const logout = async function () {
@@ -138,14 +138,14 @@ const Admin = ({ isAdmin, users }: Props) => {
                                     <div className="users-videos__titles-phone">course</div>
                                 </div>
                                 <div className="user-videos__content">
-                                    {
+                                    {/* {
                                         videos?.map((video, i) => <User
                                             key={i}
                                             phone={video.phone}
                                             course={video.course}
                                             email={video.email}
                                         />)
-                                    }
+                                    } */}
                                 </div>
                             </div>
                         </div>
@@ -160,8 +160,8 @@ const Admin = ({ isAdmin, users }: Props) => {
 // @ts-ignore
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
-        const data = await Api.auth(context)
-        console.log(context.req ? context.req.headers.cookie : undefined);
+        // const data = await Api.auth(context)
+        console.log(context.req.headers);
         // alert(context.req.headers.cookie)
 
         // const data = await Api.authAxios(context)
