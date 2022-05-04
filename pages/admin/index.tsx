@@ -178,12 +178,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         //     // }
         // }
 
-        const response = await Api.getAllCourses(context)
+        // const response = await Api.getAllCourses(context)
 
         return {
             props: {
                 // isAdmin: data.isAdmin,
-                users: response?.data.data,
+                // users: response?.data.data,
             }
         }
 

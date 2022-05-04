@@ -96,7 +96,7 @@ export class Api {
         try {
             return await api.get<ResponseType>('getVideos', {
                 headers: {
-                    Cookie: context.req.headers.cookie
+                    cookie: context.req.headers.cookie
                 }
             })
             // const response = await fetch(`http://localhost:5000/api/getVideos`, {
@@ -118,10 +118,7 @@ export class Api {
             method: 'GET',
             credentials: 'include',
             // @ts-ignore
-            headers: {
-                'Access-Control-Allow-Credentials': true,
-                Cookie: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
-            }
+            headers: ctx.req ? { cookie: ctx.req.headers.cookie } : undefined
         })
 
         return await response.json()
