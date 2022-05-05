@@ -7,6 +7,7 @@ import { setErrorMessage, setStatusLogin } from '../../store/reducers/admin.redu
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router'
 import { Api } from '../../api/api';
+import { motion } from 'framer-motion'
 
 
 type Inputs = {
@@ -26,7 +27,7 @@ const Login = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             const response = await Api.login(data.email, data.password)
-           
+
             if (!response.data.isAdmin) {
                 dispatch(setErrorMessage('Неверные данные'))
             } else if (response.data.isAdmin) {
@@ -46,8 +47,16 @@ const Login = () => {
                         <form onSubmit={handleSubmit(onSubmit)} className='login-admin__form' action="">
                             <div>Вход</div>
                             <input {...register('email', { required: 'Заполните все поля' })} placeholder='Логин' className='login-admin__email' type="text" />
-                            <input {...register('password', { required: 'Заполните все поля' })} placeholder='Пароль' className='login-admin__password' type="text" />
-                            <input className='login-admin__submit' type="submit" value={"Войти"} />
+                            <input {...register('password', { required: 'Заполните все поля' })} placeholder='Пароль'  className='login-admin__password' type="password" />
+                            <motion.input
+                                className='login-admin__submit'
+                                type="submit" value={"Войти"}
+                                whileHover={{
+                                    scale: 1.1,
+                                    // transition: { duration: 1 },
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                            />
                             {errors.email?.message || errors.password?.message}
                             {errorMessage ? errorMessage : ''}
                         </form>

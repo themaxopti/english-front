@@ -161,7 +161,7 @@ export const Tarifs = () => {
                                     {
                                         <li>
                                             {ieltsMain.maxPeople && <div>Максимально количество мест:{ieltsMain.maxPeople || ''}</div>}
-                                            <div>Записалось на курс {ieltsMain.amount}</div>
+                                            <div>Записалось на курс {ieltsMain.amount! + 4}</div>
                                         </li>
                                     }
                                     {/* <li>
@@ -211,7 +211,7 @@ export const Tarifs = () => {
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
                                     <li>
                                         {ieltsDeep.maxPeople && <div>Максимально количество мест:{ieltsDeep.maxPeople || ''}</div>}
-                                        <div>Записалось на курс {ieltsDeep.amount}</div>
+                                        <div>Записалось на курс {ieltsDeep.amount! + 2}</div>
                                     </li>
                                     {/* <li>
                                         <div>Максимально количество мест: 5</div>
