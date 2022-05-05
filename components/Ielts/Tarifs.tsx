@@ -53,7 +53,6 @@ export const Tarifs = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     function openModal(productId: number | string, isMax: boolean | null) {
-        return
         if (isMax) {
             return
         }
@@ -164,8 +163,8 @@ export const Tarifs = () => {
                                         <div>Записалось на курс {ieltsMain.amount}</div>
                                     </li> */
                                     }
-                                     <li>
-                                         <div>Максимально количество мест:15</div>
+                                    <li>
+                                        <div>Максимально количество мест:15</div>
                                         <div>Записалось на курс: 0</div>
                                     </li>
                                 </motion.ul>
@@ -203,14 +202,18 @@ export const Tarifs = () => {
                                         <div className='li_dot'></div>
                                         <div>отправка и индивидуальный разбор 8 эссе и 8 разговорных тестов</div>
                                     </li>
+                                    <li>
+                                        <div  className='li_dot'></div>
+                                        <div>финальное оценивание в формате IELTS ( мы проведём вам тест и оценим ваши результаты в формате проведения теста, чтобы вы ощутили атмосферу экзамена в полной мере)</div>
+                                    </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
                                     {/* <li>
                                         {ieltsDeep.maxPeople && <div>Максимально количество мест:{ieltsDeep.maxPeople || ''}</div>}
                                         <div>Записалось на курс {ieltsDeep.amount}</div>
                                     </li> */}
-                                     <li>
-                                       <div>Максимально количество мест: 5</div>
+                                    <li>
+                                        <div>Максимально количество мест: 5</div>
                                         <div>Записалось на курс: 0</div>
                                     </li>
                                 </motion.ul>

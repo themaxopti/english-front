@@ -50,7 +50,6 @@ interface Props {
     isAdmin: boolean,
     users: Video[]
     context: any
-    some?: string
 }
 
 export interface ResponseType {
@@ -97,7 +96,7 @@ export const NavbarItem = ({ title, link, index, active, setActive }: NavbarItem
 
 
 // @ts-ignore
-const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
+const Admin: NextPage<Props> = ({ isAdmin, users }) => {
     const router = useRouter()
 
     const [active, setActive] = useState(router.query.active || 0)
@@ -105,9 +104,21 @@ const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
     const dispatch = useAppDispatch()
     const videos = useSelector((state: AppState) => state.admin.videos)
 
+    async function effect() {
+        const response = await Api.authAxios()
+        if (!response.data.isAdmin) {
+            return router.push('/admin/login')
+        }
+        const videos = await Api.getAllCourses()
+        dispatch(addVideo(videos!.data.data))
+        return () => {
+
+        }
+    }
+
+
     useEffect(() => {
-        const data = Api.authAxios()
-        // dispatch(addVideo(users))
+        effect()
     }, [])
 
     const logout = async function () {
@@ -140,14 +151,14 @@ const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
                                     <div className="users-videos__titles-phone">course</div>
                                 </div>
                                 <div className="user-videos__content">
-                                    {/* {
+                                    {
                                         videos?.map((video, i) => <User
                                             key={i}
                                             phone={video.phone}
                                             course={video.course}
                                             email={video.email}
                                         />)
-                                    } */}
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -158,14 +169,6 @@ const Admin: NextPage<Props> = ({ isAdmin, users, some }) => {
     )
 }
 
-// @ts-ignore
-Admin.getInitialProps = async (ctx) => {
-    console.log(ctx.req?.headers!.cookie);
-
-    return {
-        some: 'soem'
-    }
-}
 
 // @ts-ignore
 // export const getServerSideProps: GetServerSideProps = async (context) => {

@@ -38,11 +38,21 @@ interface GetGeneralEnglishCourseResponse {
     data: CoursGeneralData
 }
 
-interface Consultation {
-    phone: string
-    email: string
-    name: string
-    messanger: string
+export interface Consultation {
+    name: string,
+    phone: string,
+    levelLanguage: string,
+    day: { type: Date },
+    speciality: string,
+    age: string,
+    whenTakeTest: string,
+    destanation: string,
+    whatMark: string,
+    doYouKnow: string,
+    doYouTrain: string,
+    inWhatCountry: string,
+    questions: string,
+    time: string
 }
 
 type NewPeopleOnConsultation = (data: any) => any
@@ -67,10 +77,15 @@ interface FreeTimes {
     data: FreeTimesData[]
 }
 
+export interface Auth {
+    isAdmin: boolean
+    message: string
+}
+
 export class Api {
 
     static async logout() {
-        await api.get('/logout')
+        await api.get('logout')
     }
 
     static async login(email: string, password: string) {
@@ -92,22 +107,9 @@ export class Api {
         }
     }
 
-    static async getAllCourses(context: any) {
+    static async getAllCourses() {
         try {
-            return await api.get<ResponseType>('getVideos', {
-                headers: {
-                    cookie: context.req.headers.cookie
-                }
-            })
-            // const response = await fetch(`http://localhost:5000/api/getVideos`, {
-            //     method: 'GET',
-            //     credentials: 'include',
-            //     // @ts-ignore
-            //     headers: {
-            //         'Access-Control-Allow-Credentials': true,
-            //         Cookie: context.req.headers.cookie
-            //     }
-            // })
+            return await api.get<ResponseType>('getVideos')
         } catch (e) {
             console.log(e)
         }
@@ -125,7 +127,7 @@ export class Api {
     }
 
     static async authAxios() {
-        return await api.get('authAdmin', {
+        return await api.get<Auth>('authAdmin', {
             withCredentials: true
         })
     }

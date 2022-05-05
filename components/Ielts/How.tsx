@@ -27,14 +27,14 @@ export const How = () => {
                         <motion.div custom={0.7} variants={useSideAnimation(300)} className='ielts-how__mark'>
                             <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
                             <div className="ielts-how__text">
-                                Занятия будут проходить 3 раза в неделю в Zoom (1,5 часа). Те, кто не смогут присутствовать на уроке, смогут просмотреть его в записи.
+                            Каждую неделю мы будем изучать определенный блок тем и сразу же практиковать полученные знания.
                             </div>
                         </motion.div>
 
                         <motion.div custom={0.8} variants={useSideAnimation(300)} className='ielts-how__mark'>
                             <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
                             <div className="ielts-how__text">
-                                Занятия будут проходить 3 раза в неделю в Zoom (1,5 часа). Те, кто не смогут присутствовать на уроке, смогут просмотреть его в записи.
+                            Каждая неделя связана с определенными лексическими темами, которые мы будем активно изучать и закреплять в течении недели.
                             </div>
                         </motion.div>
                     </div>

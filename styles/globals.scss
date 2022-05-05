@@ -378,7 +378,7 @@ p {
     row-gap: 20px;
     li {
       display: grid;
-      align-items: center;
+      // align-items: flex-start;
       column-gap: 10px;
       grid-template-columns: 5px 1fr;
       list-style: inside;
@@ -398,6 +398,10 @@ p {
     border-radius: 30px;
     background-color: #305af6;
   }
+}
+
+.li_dot  {
+  
 }
 
 .tarifs__line {
@@ -433,7 +437,9 @@ p {
 }
 
 .li_dot {
+  align-self: flex-start;
   width: 5px;
+  transform: translateY(5px);
   height: 5px;
   border-radius: 50%;
   background-color: black;

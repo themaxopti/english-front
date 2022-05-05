@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavbarItem, navbarItems } from '..'
 import { api, Api, User as UserType } from '../../../api/api'
 import { Wrapper } from '../../../layouts/Wrapper'
@@ -58,7 +58,30 @@ export const User = ({ name, phone, email, moduleAmount, isUser = true }: UserPr
 const Course = ({ users }: Props) => {
     const router = useRouter()
     const [active, setActive] = useState(router.query.active || 0)
+    const [courses, setCourses] = useState([])
 
+    async function effect() {
+        const response = await Api.authAxios()
+        if (!response.data.isAdmin) {
+            return router.push('/admin/login')
+        }
+
+        // @ts-ignore
+        const response1 = await Api.getPeopleOfCourse(router.query.id!)
+        // @ts-ignore
+        setCourses(response1.data!)
+        console.log(router.query);
+    }
+
+
+    useEffect(() => {
+        effect()
+    }, [])
+
+    // @ts-ignore
+    useEffect(() => {
+        effect()
+    }, [router.query.id])
 
     return (
         <Wrapper>
@@ -87,7 +110,7 @@ const Course = ({ users }: Props) => {
                                 </div>
                                 <div className={s['admin-course__users']}>
                                     {
-                                        users.map((el, i) => <User
+                                        courses?.map((el, i) => <User
                                             key={i}
                                             name={el.name}
                                             phone={el.phone}
@@ -107,46 +130,46 @@ const Course = ({ users }: Props) => {
 
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    try {
-        // const data = await Api.auth(context)
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//     try {
+//         // const data = await Api.auth(context)
 
-        const data2 = await api.get('/authAdmin', {
-            headers: {
-                Cookie: context.req.headers.cookie!
-            }
-        })
+//         const data2 = await api.get('/authAdmin', {
+//             headers: {
+//                 Cookie: context.req.headers.cookie!
+//             }
+//         })
 
-        console.log(data2);
-
-
-        // @ts-ignore
-        if (!data2.data.isAdmin) {
-            context.res.setHeader("location", "/admin/login")
-            context.res.statusCode = 302
-            context.res.end()
-        }
-
-        // @ts-ignore
-        const response = await Api.getPeopleOfCourse(context.query.id)
-
-        return {
-            props: {
-                users: response?.data
-            }
-        }
-    } catch (e) {
-        console.log(e);
-        return {
-            redirect: {
-                destination: '/admin/login',
-                statusCode: 307
-            }
-        }
-    }
+//         console.log(data2);
 
 
-}
+//         // @ts-ignore
+//         if (!data2.data.isAdmin) {
+//             context.res.setHeader("location", "/admin/login")
+//             context.res.statusCode = 302
+//             context.res.end()
+//         }
+
+//         // @ts-ignore
+//         const response = await Api.getPeopleOfCourse(context.query.id)
+
+//         return {
+//             props: {
+//                 users: response?.data
+//             }
+//         }
+//     } catch (e) {
+//         console.log(e);
+//         return {
+//             redirect: {
+//                 destination: '/admin/login',
+//                 statusCode: 307
+//             }
+//         }
+//     }
+
+
+// }
 
 
 export default Course
