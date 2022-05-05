@@ -7,10 +7,8 @@ import axios from 'axios'
 const PrivatPolicy = () => {
 
     async function login() {
-        const response = await axios.post("https://yourdreamteacher-back.herokuapp.com/api/loginAdmin", {
-            "email": "info@dreamteacher.co",
-            "password": "bul2ADHJKF22@"
-        }, { withCredentials: true })
+        const response = await axios.post("https://yourdreamteacher-back.herokuapp.com/api/prouctionPay", {}, { withCredentials: true })
+        window.location.href = response!.data.checkout_url
     }
 
     async function auth() {
@@ -30,7 +28,7 @@ const PrivatPolicy = () => {
                         <div className="privat-policy inform-block">
 
                             <div className='inform-block__box'>
-                                <p onClick={() => login()}> г. Киев 28.04.2022
+                                <p> г. Киев 28.04.2022
                                     <br />
                                     Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в отношении всей информации, которую сайт yourdreamteacher,
                                     расположенный на доменном имени https://yourdreamteacher.com, может получить о Пользователе во время использования сайта и продуктов.
@@ -38,7 +36,7 @@ const PrivatPolicy = () => {
                             </div>
 
                             <div className='inform-block__box'>
-                                <h2 onClick={() => auth()}> 1. ОПРЕДЕЛЕНИЕ ТЕРМИНОВ</h2>
+                                <h2 onClick={() => login()} > 1. ОПРЕДЕЛЕНИЕ ТЕРМИНОВ</h2>
                                 <p>
                                     1.1 В настоящей Политике конфиденциальности используются следующие термины:
                                 </p>

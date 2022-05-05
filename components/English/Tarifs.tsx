@@ -52,7 +52,6 @@ export const TarifsEnglish = () => {
     const dispatch = useAppDispatch()
 
     function openModal(productId: number | string, isMax: boolean | null) {
-        return
         if (isMax) {
             return
         }
@@ -150,14 +149,14 @@ export const TarifsEnglish = () => {
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
-                                    {/* <li>
+                                    <li>
                                         {generalEnglishMain.maxPeople && <div>Максимально количество мест:{generalEnglishMain.maxPeople || ''}</div>}
                                         <div>Записалось на курс {generalEnglishMain.amount}</div>
-                                    </li> */}
-                                    <li>
+                                    </li>
+                                    {/* <li>
                                          <div>Максимально количество мест:20</div>
                                         <div>Записалось на курс:0</div>
-                                    </li>
+                                    </li> */}
                                 </motion.ul>
                                 <motion.div custom={0.6} variants={useSideAnimation(0, 400)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                     <div onClick={() => openModal(3, generalEnglishMain.isFull)} className={`tarifs__button tarifs__button_orange ${generalEnglishMain.isFull ? 'tarifs__button_disable' : ''}`}> Order now</div>
@@ -189,14 +188,14 @@ export const TarifsEnglish = () => {
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
-                                    {/* <li>
+                                    <li>
                                         {generalEnglishDeep.maxPeople && <div>Максимально количество мест:{generalEnglishDeep.maxPeople || ''}</div>}
                                         <div>Записалось на курс {generalEnglishDeep.amount}</div>
-                                    </li> */}
-                                    <li>
+                                    </li>
+                                    {/* <li>
                                         <div>Максимально количество мест:5</div>
                                         <div>Записалось на курс:0</div>
-                                    </li>
+                                    </li> */}
                                 </motion.ul>
                                 <motion.div custom={1} variants={useSideAnimation(0, 400)} style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '-50px' }}>
                                     <div onClick={() => openModal(4, generalEnglishDeep.isFull)} style={{ cursor: 'pointer' }} className={`tarifs__button tarifs__button_orange ${generalEnglishDeep.isFull ? 'tarifs__button_disable' : ''}`}> Order now</div>
