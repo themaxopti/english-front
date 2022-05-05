@@ -73,6 +73,10 @@ const Course = ({ users }: Props) => {
         console.log(router.query);
     }
 
+    const logout = async function () {
+        await Api.logout()
+    }
+
 
     useEffect(() => {
         effect()
@@ -99,6 +103,8 @@ const Course = ({ users }: Props) => {
                                     setActive={setActive}
                                 />)
                             }
+                            <div style={{paddingLeft:'0.5rem',paddingTop:'0.5rem'}} onClick={logout}>Выйти</div>
+
                         </div>
                         <div className={s['admin-course']}>
                             <div className={s['admin-course']}>
@@ -112,9 +118,13 @@ const Course = ({ users }: Props) => {
                                     {
                                         courses?.map((el, i) => <User
                                             key={i}
+                                            // @ts-ignore
                                             name={el.name}
+                                            // @ts-ignore
                                             phone={el.phone}
+                                            // @ts-ignore
                                             email={el.email}
+                                            // @ts-ignore
                                             moduleAmount={el.moduleAmount}
                                         />)
                                     }

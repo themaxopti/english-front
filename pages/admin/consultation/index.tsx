@@ -64,6 +64,10 @@ const Index = ({ users }: Props) => {
     }, [])
 
 
+    const logout = async function () {
+        await Api.logout()
+    }
+
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
@@ -83,6 +87,7 @@ const Index = ({ users }: Props) => {
                                     setActive={setActive}
                                 />)
                             }
+                            <div style={{paddingLeft:'0.5rem',paddingTop:'0.5rem'}} onClick={logout}>Выйти</div>
                         </div>
                         <div className={s['admin-course']}>
                             <div className={s['admin-course']}>

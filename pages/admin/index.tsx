@@ -141,7 +141,7 @@ const Admin: NextPage<Props> = ({ isAdmin, users }) => {
                                     setActive={setActive}
                                 />)
                             }
-                            <div onClick={logout}>Выйти</div>
+                            <div style={{paddingLeft:'0.5rem',paddingTop:'0.5rem'}} onClick={logout}>Выйти</div>
                         </div>
                         <div className="admin__content">
                             <div className="users-videos">
@@ -157,7 +157,7 @@ const Admin: NextPage<Props> = ({ isAdmin, users }) => {
                                             phone={video.phone}
                                             course={video.course}
                                             email={video.email}
-                                        />)
+                                        /> || 'Пусто' ) 
                                     }
                                 </div>
                             </div>
