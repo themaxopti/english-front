@@ -6,15 +6,6 @@ import axios from 'axios'
 
 const PrivatPolicy = () => {
 
-    async function login() {
-        const response = await axios.post("https://yourdreamteacher-back.herokuapp.com/api/prouctionPay", {}, { withCredentials: true })
-        window.location.href = response!.data.checkout_url
-    }
-
-    async function auth() {
-        const response = await axios.get("https://yourdreamteacher-back.herokuapp.com/api/authAdmin", { withCredentials: true })
-    }
-
     return (
         <>
             <Head>
@@ -36,7 +27,7 @@ const PrivatPolicy = () => {
                             </div>
 
                             <div className='inform-block__box'>
-                                <h2 onClick={() => login()} > 1. ОПРЕДЕЛЕНИЕ ТЕРМИНОВ</h2>
+                                <h2> 1. ОПРЕДЕЛЕНИЕ ТЕРМИНОВ</h2>
                                 <p>
                                     1.1 В настоящей Политике конфиденциальности используются следующие термины:
                                 </p>
