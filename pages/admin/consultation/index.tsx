@@ -136,31 +136,5 @@ const Index = ({ users }: Props) => {
 
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-
-    // const data = await Api.getCourse(context)
-    const data = await Api.auth(context)
-
-
-    if (!data.isAdmin) {
-        context.res.setHeader("location", "/admin/login")
-        context.res.statusCode = 302
-        context.res.end()
-    }
-
-    // @ts-ignore
-    const response = await Api.getPeopleOfConsultation()
-
-    return {
-        props: {
-            isAdmin: data.isAdmin,
-            // @ts-ignore
-            users: response?.data.data
-        }
-    }
-}
-
-
-
 
 export default Index
