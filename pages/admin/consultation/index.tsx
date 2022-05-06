@@ -21,6 +21,7 @@ const questions = {
     inWhatCountry: "В какую страну вы планируете поступать/переезжать",
     day: "День для консультации",
     time: "Время",
+    questions:"Вопросы"
 }
 
 function getNormalDate() {
