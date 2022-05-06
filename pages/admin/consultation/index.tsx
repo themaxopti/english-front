@@ -136,5 +136,4 @@ const Index = ({ users }: Props) => {
 
 
 
-
 export default Index

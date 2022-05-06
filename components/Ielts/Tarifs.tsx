@@ -9,13 +9,15 @@ import { AppState, useAppDispatch } from '../../store/store'
 import { useSelector } from 'react-redux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Api } from '../../api/api'
+import { SelectField } from '../Consultation/ConsultationForm'
 
 
 
 type Inputs = {
     email: string,
     name: string,
-    phone: string
+    phone: string,
+    moduleAmount: number
 }
 
 export const Tarifs = () => {
@@ -41,7 +43,7 @@ export const Tarifs = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             console.log(data, errors)
-            const response = await Api.pay(data.email, data.phone, data.name, productId)
+            const response = await Api.pay(data.email, data.phone, data.name, productId, data.moduleAmount)
             window.location.href = response!.data.checkout_url
             console.log(response!.data.checkout_url);
         } catch (e) {
@@ -92,7 +94,6 @@ export const Tarifs = () => {
                                     required: "Заполните это поле"
                                 })}
                                 type="text" placeholder='Имя' />
-
                         </label>
                         <label htmlFor="">
                             <p> Телефон </p>
@@ -107,6 +108,19 @@ export const Tarifs = () => {
                                 })}
                                 type="text" placeholder='Телефон' />
                         </label>
+
+                        <label >
+                            <p>  Количество модулей </p>
+                            <SelectField register={register('moduleAmount')} name='time'>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                {/* <option value="9.00">9.00</option>
+                                        <option value="12.00">12.00</option>
+                                        <option value="18.00">18.00</option> */}
+                            </SelectField>
+                        </label>
+
+
                         <label htmlFor="">
                             После заполнения всех полей и нажатия на кнопку "купить" <br /> вас перенесет на страницу с оплатой
                         </label>

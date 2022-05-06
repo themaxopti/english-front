@@ -132,13 +132,14 @@ export class Api {
         })
     }
 
-    static async pay(email: string, phone: string, name: string, productId: number | string | null) {
+    static async pay(email: string, phone: string, name: string, productId: number | string | null, moduleAmount: number) {
         try {
             return await api.post<PayResponse>('pay', {
                 name,
                 email,
                 phone,
-                productId
+                productId,
+                moduleAmount
             })
         } catch (e) {
             console.log(e);

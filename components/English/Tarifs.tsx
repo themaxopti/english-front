@@ -39,7 +39,7 @@ export const TarifsEnglish = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             console.log(data, errors)
-            const response = await Api.pay(data.email, data.phone, data.name, productId)
+            const response = await Api.pay(data.email, data.phone, data.name, productId, 1)
             window.location.href = response!.data.checkout_url
             console.log(response!.data.checkout_url);
         } catch (e) {
