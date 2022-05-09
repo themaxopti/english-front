@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive'
 
 export const textAnimation = {
@@ -137,7 +136,6 @@ export const useSideAnimationDisplay = (x: number, y = 0): {} => {
     const isBig = useMediaQuery({
         query: '(min-width: 1000px)'
     })
-// hello
 
     if (isBig) {
         return {

@@ -28,7 +28,7 @@ export const FirstPage = () => {
                             </motion.div>
                             <div className='course-first-page__video-scrl'>
                                 <A path='/ielts-of-your-dream#ieltsForm'>
-                                    <motion.div
+                                    {/* <motion.div
                                         custom={1.9}
                                         variants={useSideAnimation(-100)}
 
@@ -45,7 +45,7 @@ export const FirstPage = () => {
                                         className={buttonS['animated-button']}
                                     >
                                         Получить доступ к бесплатному уроку
-                                    </motion.div>
+                                    </motion.div> */}
                                 </A>
                             </div>
                         </div>
