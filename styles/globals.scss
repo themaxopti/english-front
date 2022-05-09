@@ -542,7 +542,6 @@ p {
 // Form-contact
 
 .form-contact {
-  padding-bottom: 100px;
   font-family: "Arial";
   display: flex;
   flex-direction: column;
@@ -599,6 +598,10 @@ p {
 }
 
 // Form-contact
+
+video{
+  outline: none;
+}
 
 .thanks {
   width: 100%;
@@ -671,6 +674,15 @@ p {
 
 .user-video-card__mobile {
   display: none;
+}
+
+.video{
+  display: none;
+  flex-direction: column;
+  row-gap: 2rem;
+  font-family: "Arial";
+  font-size: 23px;
+  font-weight: bold;
 }
 
 @media (max-width: 673px) {

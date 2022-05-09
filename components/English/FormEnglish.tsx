@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Api } from '../../api/api'
 import s from '../../styles/English/FormEnglish.module.scss'
+import { Video } from '../Ielts/Form'
 import { ModalWindow } from '../ModalWindow'
 
 
@@ -17,9 +18,35 @@ export const FormEnglish = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         console.log(data, errors)
-        setIsOpen(true)
-        await Api.getCourse('general-english',data.email,data.name)
+        // setIsOpen(true)
+        await Api.getCourse('general-english', data.email, data.name)
+        form2.current.style.display = 'none'
+        video2.current.style.display = 'flex'
+        localStorage.setItem("englishVideo", 'true')
     }
+
+    const form2 = useRef() as MutableRefObject<HTMLFormElement>
+    const video2 = useRef() as MutableRefObject<HTMLDivElement>
+
+    const [isGettingVideo, setIsGettingVideo] = useState(false)
+
+
+    useEffect(() => {
+        setIsGettingVideo(JSON.parse(localStorage.getItem('englishVideo')) || false)
+        if (localStorage.getItem('englishVideo')) {
+            form2.current.style.display = 'none'
+            video2.current.style.display = 'flex'
+        } else {
+            video2.current.style.display = 'none'
+            form2.current.style.display = 'flex'
+        }
+        console.log(video2.current)
+    }, [])
+
+    useEffect(() => {
+        console.log(isGettingVideo)
+    }, [isGettingVideo])
+
 
     return (
         <>
@@ -28,16 +55,20 @@ export const FormEnglish = () => {
             </ModalWindow>
 
             <div className='section'>
-                <div className="section__content section__content_p">
-                    <div className='form-contact__wrap' style={{ padding: '200px 0 100px 0' }}>
-                        <form onSubmit={handleSubmit(onSubmit)} className='form-contact' action="">
+                <div className="section__content section__content_p" style={{padding:'200px 1rem 200px 1rem'}}>
+                    <div ref={form2} className='form-contact__wrap' >
+                        <form
+                            ref={form2}
+                            onSubmit={handleSubmit(onSubmit)}
+                            className='form-contact' action=""
+                        >
                             <span style={{ fontWeight: '600' }}>ПОЛУЧИТЬ ДОСТУП К БЕСПЛАТНОМУ УРОКУ</span>
                             <div className='form-contact__email form-contact__inp'>
                                 <div>email</div>
                                 <input {...register("email", {
                                     required: 'Заполните все поля',
                                     pattern: {
-                                        value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                        value: /^(([^<>()[\]\\.,:\s@"]+(\.[^<>()[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                                         message: 'Введите корректный емейл'
                                     }
                                 })} type="text" placeholder='email' />
@@ -60,11 +91,9 @@ export const FormEnglish = () => {
                             </div>
                         </form>
                     </div>
+                    <Video course='mainEnglish' ref={video2} title={`Бесплатный урок "Быстрая адаптация за границей"`} />
                 </div>
             </div>
-
         </>
-
-
     )
 }
