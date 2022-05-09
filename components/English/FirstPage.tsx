@@ -54,7 +54,7 @@ export const FirstPage = () => {
                                         Получить доступ к бесплатному уроку
                                     </motion.div> */}
                                 {/* </A> */}
-
+{/* ssad */}
                             </div>
                         </div>
 
