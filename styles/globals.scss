@@ -400,8 +400,7 @@ p {
   }
 }
 
-.li_dot  {
-  
+.li_dot {
 }
 
 .tarifs__line {
@@ -597,10 +596,35 @@ p {
   align-items: center;
 }
 
+.course-first-page__video-scrl {
+  font-weight: bold;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Form-contact
 
-video{
+.scroll-button {
+  font-size: 13px;
+}
+
+video {
   outline: none;
+}
+
+.form-sect{
+  padding: 200px 1rem 200px 1rem;
+}
+
+@media (max-width: 580px) {
+  
+.form-sect{
+  padding: 100px 1rem 100px 1rem;
+}
+
 }
 
 .thanks {
@@ -676,7 +700,7 @@ video{
   display: none;
 }
 
-.video{
+.video {
   display: none;
   flex-direction: column;
   row-gap: 2rem;

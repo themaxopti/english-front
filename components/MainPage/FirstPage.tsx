@@ -69,7 +69,7 @@ export const FirstPage: NextPage = () => {
                                 scale: 1.1,
                                 // transition: { duration: 1 },
                             }}
-                            custom={1.1} variants={useSideAnimation(100)}
+                            custom={1.6} variants={useSideAnimation(100)}
                             whileTap={{ scale: 0.9 }}
                         >
                             Почему Dream teacher?

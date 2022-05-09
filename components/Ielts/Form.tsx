@@ -1,13 +1,11 @@
-import axios from 'axios';
-import Link from 'next/link';
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Api } from '../../api/api';
 import { ModalWindow } from '../ModalWindow';
 
 type Inputs = {
-    email: string,
-    name: string,
+    email: string
+    name: string
 }
 
 interface VideoProps {
@@ -83,10 +81,17 @@ export const Form = () => {
             </ModalWindow>
 
             <div
-                className='section'
+                id='ieltsForm'
+                style={{ width: '100%', height: '90px', position: 'absolute', visibility: 'hidden' }}
+            >
+
+            </div>
+
+            <div
+                className='section form-sect'
                 style={{ display: 'flex', flexDirection: 'column', background: "#D6DEFD" }}
             >
-                <div className="section__content section__content_p" style={{ padding: '200px 1rem 200px 1rem' }}>
+                <div className="section__content  section__content_p">
                     <div className='form-contact__wrap'>
                         <form ref={form}
                             onSubmit={handleSubmit(onSubmit)}

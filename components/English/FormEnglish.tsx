@@ -55,8 +55,15 @@ export const FormEnglish = () => {
                 <div className='thanks'>Спасибо,ссылка на урок пришла вам на почту</div>
             </ModalWindow>
 
-            <div className='section'>
-                <div className="section__content section__content_p" style={{ padding: '200px 1rem 200px 1rem' }}>
+            <div
+                id='englishForm'
+                style={{ width: '100%', height: '90px', position: 'absolute', visibility: 'hidden' }}
+            >
+
+            </div>
+
+            <div className='section form-sect'>
+                <div className="section__content section__content_p">
                     <div
                         // @ts-ignore
                         ref={form2}
