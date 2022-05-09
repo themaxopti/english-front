@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useSideAnimation } from '../MainPage/motion'
 import buttonS from '../../styles/Fields/Button.module.scss'
+import { A } from '../Link'
 
 export const FirstPage = () => {
     return (
@@ -26,24 +27,26 @@ export const FirstPage = () => {
                                 </div>
                             </motion.div>
                             <div className='course-first-page__video-scrl'>
-                                <motion.a
-                                    custom={1.9}
-                                    variants={useSideAnimation(-100)}
-                                    href='/ielts-of-your-dream#ieltsForm'
-                                    whileHover={{
-                                        scale: 1.1,
-                                        transition: { duration: 0.1 }
-                                    }}
-                                    whileTap={{
-                                        scale: 0.9,
-                                        boxShadow: ' 0px 0px 1px 22px rgba(101, 123, 243, 0.35);',
-                                        transition: { duration: 0.1 }
-                                    }}
-                                    style={{ marginTop: "60px" }}
-                                    className={buttonS['animated-button']}
-                                >
-                                    Получить доступ к бесплатному уроку
-                                </motion.a>
+                                <A path='/ielts-of-your-dream#ieltsForm'>
+                                    <motion.div
+                                        custom={1.9}
+                                        variants={useSideAnimation(-100)}
+
+                                        whileHover={{
+                                            scale: 1.1,
+                                            transition: { duration: 0.1 }
+                                        }}
+                                        whileTap={{
+                                            scale: 0.9,
+                                            boxShadow: ' 0px 0px 1px 22px rgba(101, 123, 243, 0.35);',
+                                            transition: { duration: 0.1 }
+                                        }}
+                                        style={{ marginTop: "60px" }}
+                                        className={buttonS['animated-button']}
+                                    >
+                                        Получить доступ к бесплатному уроку
+                                    </motion.div>
+                                </A>
                             </div>
                         </div>
 

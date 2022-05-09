@@ -1,7 +1,7 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react'
-import { useForm, SubmitHandler } from "react-hook-form";
-import { Api } from '../../api/api';
-import { ModalWindow } from '../ModalWindow';
+import { useForm, SubmitHandler } from "react-hook-form"
+import { Api } from '../../api/api'
+import { ModalWindow } from '../ModalWindow'
 
 type Inputs = {
     email: string
