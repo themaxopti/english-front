@@ -60,6 +60,7 @@ export const Form = () => {
     const [isGettingVideo, setIsGettingVideo] = useState(false)
 
     useEffect(() => {
+        // @ts-ignore
         setIsGettingVideo(JSON.parse(localStorage.getItem('ieltsVideo')) || false)
         if (localStorage.getItem('ieltsVideo')) {
             form.current.style.display = 'none'

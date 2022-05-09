@@ -32,6 +32,7 @@ export const FormEnglish = () => {
 
 
     useEffect(() => {
+        // @ts-ignore
         setIsGettingVideo(JSON.parse(localStorage.getItem('englishVideo')) || false)
         if (localStorage.getItem('englishVideo')) {
             form2.current.style.display = 'none'
@@ -55,8 +56,12 @@ export const FormEnglish = () => {
             </ModalWindow>
 
             <div className='section'>
-                <div className="section__content section__content_p" style={{padding:'200px 1rem 200px 1rem'}}>
-                    <div ref={form2} className='form-contact__wrap' >
+                <div className="section__content section__content_p" style={{ padding: '200px 1rem 200px 1rem' }}>
+                    <div
+                        // @ts-ignore
+                        ref={form2}
+                        className='form-contact__wrap'
+                    >
                         <form
                             ref={form2}
                             onSubmit={handleSubmit(onSubmit)}
