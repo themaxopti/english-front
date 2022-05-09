@@ -137,7 +137,7 @@ export const useSideAnimationDisplay = (x: number, y = 0): {} => {
     const isBig = useMediaQuery({
         query: '(min-width: 1000px)'
     })
-
+// hello
 
     if (isBig) {
         return {
