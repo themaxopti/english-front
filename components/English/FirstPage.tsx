@@ -29,7 +29,7 @@ export const FirstPage = () => {
                                 </div>
                             </motion.div>
                             <div className='course-first-page__video-scrl'>
-                                <A path='/general-english#englishForm'>
+                                {/* <A path='/general-english#englishForm'> */}
                                     {/* <motion.div
                                         custom={1.9}
                                         variants={useSideAnimation(-100)}
@@ -53,7 +53,7 @@ export const FirstPage = () => {
                                     >
                                         Получить доступ к бесплатному уроку
                                     </motion.div> */}
-                                </A>
+                                {/* </A> */}
 
                             </div>
                         </div>
