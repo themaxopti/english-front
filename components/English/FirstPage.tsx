@@ -29,8 +29,8 @@ export const FirstPage = () => {
                                 </div>
                             </motion.div>
                             <div className='course-first-page__video-scrl'>
-                                {/* <A path='/general-english#englishForm'> */}
-                                    {/* <motion.div
+                                <A path='/general-english#englishForm'>
+                                    <motion.div
                                         custom={1.9}
                                         variants={useSideAnimation(-100)}
                                         whileHover={{
@@ -52,9 +52,8 @@ export const FirstPage = () => {
                                         className={buttonS['animated-button']}
                                     >
                                         Получить доступ к бесплатному уроку
-                                    </motion.div> */}
-                                {/* </A> */}
-{/* ssads */}
+                                    </motion.div>
+                                </A>
                             </div>
                         </div>
 
