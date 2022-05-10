@@ -25,7 +25,7 @@ export const imgAnimation = {
     }),
 }
 
-export const useImgAnimation = ():{} => {
+export const useImgAnimation = (): {} => {
 
     const isBig = useMediaQuery({
         query: '(min-width: 1000px)'
@@ -125,7 +125,18 @@ export const useSideAnimation = (x: number, y = 0): {} => {
             })
         }
     } else {
-        return {}
+        return {
+            hidden: {
+                x: 0,
+                y: 0,
+                opacity: 1
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                opacity: 1,
+            })
+        }
     }
 
 }
@@ -189,6 +200,17 @@ export const useShow = (): {} => {
             })
         }
     } else {
-        return {}
+        return {
+            hidden: {
+                x: 0,
+                y: 0,
+                opacity: 1
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                opacity: 1,
+            })
+        }
     }
 }
