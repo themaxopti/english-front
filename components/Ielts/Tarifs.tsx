@@ -18,6 +18,7 @@ type Inputs = {
     name: string,
     phone: string,
     moduleAmount: number
+    moduleTitle: string
 }
 
 export const Tarifs = () => {
@@ -43,7 +44,7 @@ export const Tarifs = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             console.log(data, errors)
-            const response = await Api.pay(data.email, data.phone, data.name, productId, data.moduleAmount)
+            const response = await Api.pay(data.email, data.phone, data.name, productId, data.moduleAmount, data.moduleTitle)
             window.location.href = response!.data.checkout_url
             console.log(response!.data.checkout_url);
         } catch (e) {
@@ -109,7 +110,7 @@ export const Tarifs = () => {
                                 type="text" placeholder='Телефон' />
                         </label>
 
-                        <label >
+                        <label>
                             <p>  Количество модулей </p>
                             <SelectField register={register('moduleAmount')} name='time'>
                                 <option value="1">1</option>
@@ -117,6 +118,13 @@ export const Tarifs = () => {
                                 {/* <option value="9.00">9.00</option>
                                         <option value="12.00">12.00</option>
                                         <option value="18.00">18.00</option> */}
+                            </SelectField>
+                        </label>
+                        <label>
+                            <p>  Название модуля </p>
+                            <SelectField register={register('moduleTitle')} name='time'>
+                                <option value="General">General</option>
+                                <option value="Academic">Academic</option>
                             </SelectField>
                         </label>
 

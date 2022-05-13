@@ -615,16 +615,14 @@ video {
   outline: none;
 }
 
-.form-sect{
+.form-sect {
   padding: 200px 1rem 200px 1rem;
 }
 
 @media (max-width: 580px) {
-  
-.form-sect{
-  padding: 100px 1rem 100px 1rem;
-}
-
+  .form-sect {
+    padding: 100px 1rem 100px 1rem;
+  }
 }
 
 .thanks {
@@ -916,10 +914,32 @@ video {
 
 // Tarifs
 
+@media (max-width: 1000px) {
+  .tarifs__modal {
+    height: 500px;
+    overflow-y: scroll;
+  }
+}
+
+.tarifs__modal::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tarifs__modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.tarifs__modal::-webkit-scrollbar-thumb{
+  background: #305af6;
+}
+
 .tarifs__modal {
   font-family: "Arial";
   padding: 2rem;
   min-height: 500px;
+  max-height: 700px;
+  overflow-y: scroll;
+
   form {
     margin-top: 60px;
     display: flex;
