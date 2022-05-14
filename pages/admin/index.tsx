@@ -116,7 +116,6 @@ const Admin: NextPage<Props> = ({ isAdmin, users }) => {
         }
     }
 
-
     useEffect(() => {
         effect()
     }, [])

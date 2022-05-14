@@ -16,7 +16,8 @@ export const FirstPage = () => {
                         <div className='course-first-page__wrap'>
                             <motion.div custom={1.1} variants={useSideAnimation(-100)} className='course-first-page__title'><h1>Курс <br /> IELTS of YOUR DREAM</h1></motion.div>
                             <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__level'>(уровень Upper-intermediate, Advanced)</motion.div>
-                            <motion.div custom={1.5} variants={useSideAnimation(-100)} className='course-first-page__program'>ПРОГРАММА КУРСА (8 недель= 2 модуля)</motion.div>
+                            <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__modules'>модули: Academic и General</motion.div>
+                            <motion.div custom={1.5} variants={useSideAnimation(-100)} className='course-first-page__program'>ПРОГРАММА КУРСА (8 недель = 2 модуля)</motion.div>
                             <motion.div className='course-first-page__start start-course'>
                                 <div className='start-course__block'>
                                     <motion.div custom={1.3} variants={useSideAnimation(-200, -200)} className='start-course__one start-course__line'></motion.div>
@@ -73,6 +74,10 @@ export const FirstPage = () => {
                                         <li> Учимся описывать линейный график</li>
                                     </ul>
                                 </div>
+                            </motion.div>
+
+                            <motion.div custom={1.5} variants={useSideAnimation(-200)} className="description-block__task">
+                                <div className="description-block__task-title">Task 1 General "Letter of request"</div>
                             </motion.div>
 
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={1.1} variants={useSideAnimation(200)} className="description-block__task">

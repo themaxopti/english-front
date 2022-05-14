@@ -142,6 +142,12 @@ p {
   justify-content: flex-start;
   font-family: "Arial";
 
+  &__modules{
+    color: #305af6;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
   &__table {
     position: relative;
     padding-bottom: 100px;

@@ -31,15 +31,20 @@ export const Description = () => {
                                     Task 1: Process – разбор, анализ и практика
                                 </div>
                             </div>
+                            
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">Task 2:</div>
+                                <div className="description-block__task-title">Task 1:</div>
                                 <div className="description-block__task-desc">
                                     <ul>
                                         <li> Как сделать текст связным</li>
                                         <li>Анализ и практика написания Advantages and Disadvantages Essay по специальной структуре</li>
                                     </ul>
                                 </div>
+                            </div>
+                            <div className="description-block__task">
+                                <div className="description-block__task-title">Task 1 General "Letter of complaint"</div>
+                               
                             </div>
 
                             <div className="description-block__task">
@@ -81,6 +86,9 @@ export const Description = () => {
                                 <div className="description-block__task-title">Writing</div>
                                 <div className="description-block__task-desc">
                                     <strong>Task 1:</strong>  <br /> Разбор, анализ и практика Tables, bars and pie charts
+                                </div>
+                                <div className="description-block__task-desc">
+                                    <strong>Task 1 General "Letter of apology"</strong>
                                 </div>
                             </div>
 
@@ -139,6 +147,10 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
+                                <div className="description-block__task-title">Task 1 General "Letter of recommendation" </div>
+                            </div>
+
+                            <div className="description-block__task">
                                 <div className="description-block__task-title">Task 2</div>
                                 <div className="description-block__task-desc">
                                     <ul>
@@ -194,6 +206,10 @@ export const Description = () => {
                                 <div className="description-block__task-desc">
                                     Mixed Charts
                                 </div>
+                            </div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-title">Task 1 General "Letter of explanation"</div>
                             </div>
 
                             <div className="description-block__task">
