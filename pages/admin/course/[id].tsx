@@ -54,13 +54,50 @@ export const User = ({ name, phone, email, moduleAmount, isUser = true }: UserPr
     )
 }
 
+interface MobileUserProps {
+    email: string
+    phone: string
+    course: string
+    moduleTitle: string
+    moduleAmount: string | number
+}
+
+const MobileUser = ({ email, phone, moduleTitle, moduleAmount }: MobileUserProps) => {
+    return (
+        <div className={s["user-card-mob"]}>
+            <div className={s["user-card-mob__sect"]}>
+                <div className={s["user-card-mob__title"]}>Емейл:</div>
+                <div className={s["user-card-mob__value"]}>{email}</div>
+            </div>
+
+            <div className={s["user-card-mob__sect"]}>
+                <div className={s["user-card-mob__title"]}>Телефон:</div>
+                <div className={s["user-card-mob__value"]}>{phone}</div>
+            </div>
+
+
+            <div className={s["user-card-mob__sect"]}>
+                <div className={s["user-card-mob__title"]}>Название модуля:</div>
+                <div className={s["user-card-mob__value"]}>{moduleTitle}</div>
+            </div>
+
+            <div className={s["user-card-mob__sect"]}>
+                <div className={s["user-card-mob__title"]}>Количество модулей:</div>
+                <div className={s["user-card-mob__value"]}>{moduleAmount}</div>
+            </div>
+
+        </div>
+    )
+}
 
 const Course = ({ users }: Props) => {
     const router = useRouter()
     const [active, setActive] = useState(router.query.active || 0)
     const [courses, setCourses] = useState([])
+    const [load, setLoad] = useState(true)
 
     async function effect() {
+        setLoad(true)
         const response = await Api.authAxios()
         if (!response.data.isAdmin) {
             return router.push('/admin/login')
@@ -71,6 +108,7 @@ const Course = ({ users }: Props) => {
         // @ts-ignore
         setCourses(response1.data!)
         console.log(router.query);
+        setLoad(false)
     }
 
     const logout = async function () {
@@ -103,30 +141,30 @@ const Course = ({ users }: Props) => {
                                     setActive={setActive}
                                 />)
                             }
-                            <div style={{paddingLeft:'0.5rem',paddingTop:'0.5rem'}} onClick={logout}>Выйти</div>
+                            <div style={{ paddingLeft: '0.5rem', paddingTop: '0.5rem' }} onClick={logout}>Выйти</div>
 
                         </div>
                         <div className={s['admin-course']}>
                             <div className={s['admin-course']}>
-                                <div className={s['admin-course__title']}>
-                                    <div>Имя</div>
-                                    <div>Телефон</div>
-                                    <div>Емейл</div>
-                                    <div>Количество модулей</div>
-                                </div>
+
                                 <div className={s['admin-course__users']}>
                                     {
-                                        courses?.map((el, i) => <User
-                                            key={i}
-                                            // @ts-ignore
-                                            name={el.name}
-                                            // @ts-ignore
-                                            phone={el.phone}
-                                            // @ts-ignore
-                                            email={el.email}
-                                            // @ts-ignore
-                                            moduleAmount={el.moduleAmount}
-                                        />)
+                                        load && 'Загрузка'
+                                    }
+                                    {
+                                        !load ? courses.length > 0 ? courses?.map((el, i) => <MobileUser
+                                        key={i}
+                                        // @ts-ignore
+                                        name={el.name}
+                                        // @ts-ignore
+                                        phone={el.phone}
+                                        // @ts-ignore
+                                        email={el.email}
+                                        // @ts-ignore
+                                        moduleAmount={el.moduleAmount}
+                                        // @ts-ignore
+                                        moduleTitle={el.moduleTitle}
+                                    />) : 'Пусто' : ''
                                     }
                                 </div>
                             </div>

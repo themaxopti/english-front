@@ -112,7 +112,7 @@ const Admin: NextPage<Props> = ({ isAdmin, users }) => {
         const videos = await Api.getAllCourses()
         dispatch(addVideo(videos!.data.data))
         return () => {
-
+            
         }
     }
 
