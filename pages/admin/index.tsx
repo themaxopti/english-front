@@ -146,7 +146,7 @@ const Admin: NextPage<Props> = ({ isAdmin, users }) => {
                             <div className="users-videos">
                                 <div className="users-videos__titles">
                                     <div className="users-videos__titles-email">email</div>
-                                    <div className="users-videos__titles-phone">phone</div>
+                                    <div className="users-videos__titles-phone">name</div>
                                     <div className="users-videos__titles-phone">course</div>
                                 </div>
                                 <div className="user-videos__content">
