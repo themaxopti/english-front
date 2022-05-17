@@ -31,6 +31,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
         <>
             <Head>
                 <link rel="shortcut icon" href="/images/logoHead.svg" />
+                <meta name="facebook-domain-verification" content="57f8b0vct7l2klp1cpwv7c1qv6lr49" />
                 {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta> */}
             </Head>
             <LocalizationProvider locale={ruLocale} dateAdapter={AdapterDateFns}>
