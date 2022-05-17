@@ -213,4 +213,10 @@
     padding: 0.5rem 0.5rem 0 0.5rem;
   }
 }
+
+@media (max-width: 318px) {
+  .header-mobile nav {
+    padding-left: 0.5rem;
+  }
+}
 /*# sourceMappingURL=Header.module.css.map */

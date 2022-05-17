@@ -66,6 +66,18 @@
   z-index: 2;
 }
 
+@media (max-width: 842px) {
+  .how h2 {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    position: relative;
+    z-index: 10;
+  }
+  .how__text-two {
+    margin-top: 60px;
+  }
+}
+
 .with-color {
   background: -webkit-gradient(linear, left top, left bottom, from(#181825), color-stop(49%, #251a40));
   background: linear-gradient(180deg, #181825, #251a40 49%);

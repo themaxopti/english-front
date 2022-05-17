@@ -1,0 +1,49 @@
+.checkBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.checkBox input[type="checkBox"] {
+  display: none;
+  width: 0;
+  opacity: 0;
+}
+
+.checkBox .circle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.checkBox input[type="checkBox"]:checked + .circle div {
+  width: 10px;
+  height: 10px;
+  background-color: aqua;
+}
+
+.checkBox input[type="checkBox"] + .circle div {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.checkBox input[type="checkBox"]:checked + .circle {
+  box-shadow: 0px 0px 0px 4px rgba(0, 144, 255, 0.35);
+  -moz-box-shadow: 0px 0px 0px 4px rgba(0, 144, 255, 0.35);
+  -webkit-box-shadow: 0px 0px 0px 4px rgba(0, 144, 255, 0.35);
+}
+/*# sourceMappingURL=CheckBox.module.css.map */

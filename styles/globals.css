@@ -169,6 +169,12 @@ p {
   font-family: "Arial";
 }
 
+.course-first-page__modules {
+  color: #305af6;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .course-first-page__table {
   position: relative;
   padding-bottom: 100px;
@@ -198,6 +204,20 @@ p {
           flex-direction: column;
   width: 100%;
   text-align: center;
+}
+
+.course-first-page__start {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .course-first-page__title {
@@ -473,9 +493,6 @@ p {
 .tarifs__tasks li {
   display: -ms-grid;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-column-gap: 10px;
           column-gap: 10px;
   -ms-grid-columns: 5px 1fr;
@@ -542,7 +559,11 @@ p {
 }
 
 .li_dot {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   width: 5px;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
   height: 5px;
   border-radius: 50%;
   background-color: black;
@@ -645,7 +666,6 @@ p {
 }
 
 .form-contact {
-  padding-bottom: 100px;
   font-family: "Arial";
   display: -webkit-box;
   display: -ms-flexbox;
@@ -731,6 +751,39 @@ p {
           align-items: center;
 }
 
+.course-first-page__video-scrl {
+  font-weight: bold;
+  width: 100%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scroll-button {
+  font-size: 13px;
+}
+
+video {
+  outline: none;
+}
+
+.form-sect {
+  padding: 200px 1rem 200px 1rem;
+}
+
+@media (max-width: 580px) {
+  .form-sect {
+    padding: 100px 1rem 100px 1rem;
+  }
+}
+
 .thanks {
   width: 100%;
   padding: 1rem;
@@ -788,9 +841,10 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid #305af6;
+  border: 1px solid #315cf6;
   border-left: none;
   border-top: none;
+  margin-bottom: 50px;
 }
 
 .admin__navbar-item {
@@ -800,9 +854,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -812,12 +865,31 @@ p {
   border-right: none;
 }
 
+.user-video-card__mobile {
+  display: none;
+}
+
+.video {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+  font-family: "Arial";
+  font-size: 23px;
+  font-weight: bold;
+}
+
 @media (max-width: 777px) {
   .admin {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 40px auto;
-        grid-template-rows: 40px auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+  }
+  .admin__navbar {
+    border: none;
   }
 }
 
@@ -829,6 +901,7 @@ p {
 
 .users-videos__titles {
   width: 100%;
+  margin-bottom: 40px;
   height: 40px;
   display: -ms-grid;
   display: grid;
@@ -848,16 +921,101 @@ p {
   min-height: 40px;
   display: -ms-grid;
   display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user-video-card div {
+  word-break: break-all;
+}
+
+.start-course {
+  margin-top: 25px;
+}
+
+.start-course__line {
+  border: 3px solid #cf1d1d;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.start-course__block {
+  position: relative;
+}
+
+.start-course__one {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.start-course__two {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.start-course__three {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+.start-course__four {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.start-course__text {
+  width: 135px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #cf1d1d;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media (max-width: 672px) {
   .users-videos {
     padding-left: 0px;
+  }
+  .user-video-card {
+    display: none;
+  }
+  .user-video-card__mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
+  .user-video-card__mobile div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 0.5rem;
+            column-gap: 0.5rem;
   }
   .admin__content {
     padding-top: 1rem;
@@ -874,6 +1032,31 @@ p {
   .users-videos__titles {
     display: none;
   }
+}
+
+@media (max-width: 258px) {
+  .user-video-card__mobile div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.fluid {
+  word-break: break-all;
+}
+
+.user-videos__content {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
 }
 
 .login-admin {
@@ -934,10 +1117,31 @@ p {
   cursor: pointer;
 }
 
+@media (max-width: 1000px) {
+  .tarifs__modal {
+    height: 500px;
+    overflow-y: scroll;
+  }
+}
+
+.tarifs__modal::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tarifs__modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.tarifs__modal::-webkit-scrollbar-thumb {
+  background: #305af6;
+}
+
 .tarifs__modal {
   font-family: "Arial";
   padding: 2rem;
   min-height: 500px;
+  max-height: 700px;
+  overflow-y: scroll;
 }
 
 .tarifs__modal form {

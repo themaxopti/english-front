@@ -1,14 +1,31 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { wrapper } from '../store/store'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Head from 'next/head'
 import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ruLocale from 'date-fns/locale/ru';
+import { useRouter } from 'next/router'
 
 
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
+
+    const router = useRouter()
+
+    useEffect(() => {
+        import('react-facebook-pixel')
+            .then((x) => x.default)
+            .then((ReactPixel) => {
+                ReactPixel.init('521931136313665') // facebookPixelId
+                ReactPixel.pageView()
+
+                router.events.on('routeChangeComplete', () => {
+                    ReactPixel.pageView()
+                })
+            })
+    }, [router.events])
+
 
     return (
         <>
