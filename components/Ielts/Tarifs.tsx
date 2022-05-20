@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Api } from '../../api/api'
 import { SelectField } from '../Consultation/ConsultationForm'
+import moment from 'moment'
+import { composeWords, useTimer } from '../../helpers/delay'
 
 
 
@@ -29,13 +31,45 @@ export const Tarifs = () => {
 
     const firstRequest = async () => {
         dispatch(getIeltsCourse())
-        console.log(1);
     }
+
+
+
+    const [time, setTime] = useState('')
+
+
 
     useEffect(() => {
         (async () => firstRequest())()
-    }, [])
 
+        let eventTimeUnix = moment("2022-05-27 19:00:00").unix()
+        let currentTimeUnix = moment(moment().format()).unix()
+
+        var diffTime = eventTimeUnix - currentTimeUnix;
+        var duration = moment.duration(diffTime * 1000, 'milliseconds');
+        var interval = 1000;
+
+        const day =
+            duration.days() <= 0
+                ? 0 + ' дней'
+                : duration.days() + ' ' + composeWords(duration.days(), 'day')
+
+        const min = composeWords(duration.minutes(), 'min')
+        const hours =
+            duration.hours() <= 0
+                ? 0 + " часов"
+                : duration.hours() + ' ' + composeWords(duration.hours(), 'hours')
+
+        // + duration.minutes() + ` ${min} ` + duration.seconds()
+
+        const id = setInterval(function () {
+            // @ts-ignore
+            duration = moment.duration(duration - interval, 'milliseconds');
+            setTime(`${` ${day} ` + ` ${hours} `}`)
+            // console.log(duration.days() + " " + duration.hours() + ":" + duration.minutes() + ":" + duration.seconds())
+        }, interval);
+
+    }, [])
 
 
     const productId = useSelector((state: AppState) => state.courses.productId)
@@ -156,10 +190,37 @@ export const Tarifs = () => {
                         <div className="tarifs__wrap">
                             <motion.div custom={0.5} variants={useSideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_one">
                                 <motion.div custom={0.7} variants={useSideAnimation(-100)} className="tarifs__title">Тариф «Стандарт»</motion.div>
-                                <motion.div custom={0.8} variants={useSideAnimation(100)} className="tarifs__price">$99</motion.div>
+                                <motion.div
+                                    custom={0.7}
+                                    variants={useSideAnimation(100)}
+                                    style={{ textDecoration: 'line-through' }}
+                                    className="tarifs__price"
+                                >
+                                    $149.99
+                                </motion.div>
+                                <motion.div
+                                    custom={0.8}
+                                    variants={useSideAnimation(100)}
+                                    className="tarifs__price"
+                                    style={{ translateY: "-15px" }}
+                                >
+                                    $119.99
+                                </motion.div>
+                                <motion.div
+                                    className='time'
+                                    custom={0.7}
+                                    variants={useSideAnimation(100)}
+                                >
+                                    <div
+                                        style={{ marginBottom: '20px' }}
+                                    >
+                                        Купить по специальной цене можно до  19:00 27/05</div>
+                                    <div>Осталось</div>
+                                    <div>{time}</div>
+                                </motion.div>
                                 <motion.div custom={0.9} variants={useSideAnimation(-100)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
-                                    <span className='tarifs__or'>(или 180$ при оплате двух модулей сразу)</span>
+                                    <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>249,99$</span> 199$ при оплате двух модулей сразу)</span>
                                 </motion.div>
                                 <motion.ul custom={1} variants={useSideAnimation(200)} className='tarifs__tasks'>
                                     <li>
@@ -183,13 +244,9 @@ export const Tarifs = () => {
                                     {
                                         <li>
                                             {ieltsMain.maxPeople && <div>Максимально количество мест:{ieltsMain.maxPeople || ''}</div>}
-                                            <div>Записалось на курс {ieltsMain.amount! + 4}</div>
+                                            {/* <div>Записалось на курс {ieltsMain.amount! + 4}</div> */}
                                         </li>
                                     }
-                                    {/* <li>
-                                        <div>Максимально количество мест:15</div>
-                                        <div>Записалось на курс: 0</div>
-                                    </li> */}
                                 </motion.ul>
                                 <motion.div custom={1.2} variants={useSideAnimation(0, 200)} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                                     <div onClick={() => { openModal(1, ieltsMain.isFull) }} className={`tarifs__button ${ieltsMain.isFull ? 'tarifs__button_disable' : ''} `}>Order now</div>
@@ -198,11 +255,42 @@ export const Tarifs = () => {
 
 
                             <motion.div custom={0.5} variants={useSideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_two">
-                                <motion.div custom={0.6} variants={useSideAnimation(-100)} className="tarifs__title">Тариф <br />  «Углубленная подготовка»</motion.div>
-                                <motion.div custom={0.7} variants={useSideAnimation(100)} className="tarifs__price">$199</motion.div>
+                                <motion.div
+                                    custom={0.6}
+                                    variants={useSideAnimation(-100)}
+                                    className="tarifs__title">Тариф <br />  «Углубленная подготовка»
+                                </motion.div>
+
+                                <motion.div
+                                    custom={0.7}
+                                    variants={useSideAnimation(100)}
+                                    style={{ textDecoration: 'line-through' }}
+                                    className="tarifs__price"
+                                >
+                                    $499
+                                </motion.div>
+                                <motion.div
+                                    custom={0.7}
+                                    variants={useSideAnimation(100)}
+                                    className="tarifs__price"
+                                    style={{ translateY: "-15px" }}
+                                >
+                                    $225
+                                </motion.div>
+                                <motion.div
+                                    className='time'
+                                    custom={0.7}
+                                    variants={useSideAnimation(100)}>
+                                    <div
+                                        style={{ marginBottom: '20px' }}
+                                    >
+                                        Купить по специальной цене можно до  19:00 27/05</div>
+                                    <div>Осталось</div>
+                                    <div>{time}</div>
+                                </motion.div>
                                 <motion.div custom={0.8} variants={useSideAnimation(200)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
-                                    <span className='tarifs__or'>(или 360$ при оплате двух модулей сразу)</span>
+                                    <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>449$</span> 399$ при оплате двух модулей сразу)</span>
                                 </motion.div>
                                 <motion.ul custom={1} variants={useSideAnimation(100)} className='tarifs__tasks'>
                                     <li>
@@ -233,7 +321,7 @@ export const Tarifs = () => {
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
                                     <li>
                                         {ieltsDeep.maxPeople && <div>Максимально количество мест:{ieltsDeep.maxPeople || ''}</div>}
-                                        <div>Записалось на курс {ieltsDeep.amount! + 2}</div>
+                                        {/* <div>Записалось на курс {ieltsDeep.amount! + 2}</div> */}
                                     </li>
                                     {/* <li>
                                         <div>Максимально количество мест: 5</div>
