@@ -7,6 +7,7 @@ import { LocalizationProvider } from '@mui/lab'
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import ruLocale from 'date-fns/locale/ru';
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 
 
 const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
@@ -17,7 +18,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
         import('react-facebook-pixel')
             .then((x) => x.default)
             .then((ReactPixel) => {
-                ReactPixel.init('428428595603693') // facebookPixelId
+                ReactPixel.init('428428595603693') //  428428595603693
                 ReactPixel.pageView()
 
                 router.events.on('routeChangeComplete', () => {
