@@ -34,9 +34,7 @@ export const Tarifs = () => {
     }
 
 
-
     const [time, setTime] = useState('')
-
 
 
     useEffect(() => {

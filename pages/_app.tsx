@@ -17,7 +17,7 @@ const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
         import('react-facebook-pixel')
             .then((x) => x.default)
             .then((ReactPixel) => {
-                ReactPixel.init('521931136313665') // facebookPixelId
+                ReactPixel.init('428428595603693') // facebookPixelId
                 ReactPixel.pageView()
 
                 router.events.on('routeChangeComplete', () => {
