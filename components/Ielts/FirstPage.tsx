@@ -108,6 +108,13 @@ export const FirstPage = () => {
                                     Разбираем и практикуем задания «matching headings» и «matching information»
                                 </div>
                             </motion.div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <br /> <span className='normal-f'> Growing up, Physical and mental development, Keeping Fit </span></div>
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

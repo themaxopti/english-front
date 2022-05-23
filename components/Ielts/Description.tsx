@@ -8,7 +8,7 @@ export const Description = () => {
         <div className='section' style={{ background: '#E6EAFD' }}>
             <div className="section__content section__content_p">
                 <div className="course-main">
-                    <div className="course-first-page__table">
+                    <div className="course-first-page__table" style={{transform:'translateY(40px)'}} >
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={0.5} variants={useSideAnimation(200)} className='description-block'>
                             <motion.div custom={1.1} variants={useSideAnimation(-100)} className="description-block__week">2 неделя:</motion.div>
                             <motion.div className="description-block__task">
@@ -56,13 +56,12 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: Lifestyles, Student life, Effective communication</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <br /> <span className='normal-f'> Lifestyles, Student life, Effective communication </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
                             </div>
                         </motion.div>
-
                     </div>
 
 
@@ -108,7 +107,7 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: TRAVELS, HISTORY, NATURAL WORLD</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:  <br /> <span className='normal-f'> TRAVELS, HISTORY, NATURAL WORLD </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
@@ -170,7 +169,7 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: MODERN WORLD, DESIGN AND INNOVATION, IT</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:  <br /> <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
@@ -231,6 +230,12 @@ export const Description = () => {
                                 </div>
                             </div>
 
+                            <div className="description-block__task">
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <br /> <span className='normal-f'> Envinronment </span></div>
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
 
                         </div>
                     </motion.div>
@@ -268,12 +273,7 @@ export const Description = () => {
                                 </div>
                             </div>
 
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: URBANISATION, ENVINRONMENT</div>
-                                <div className="description-block__task-desc">
-
-                                </div>
-                            </div>
+                           
 
                             <div className="description-block__task">
                                 <div className="description-block__task-title">Speaking</div>
@@ -283,11 +283,12 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: MODERN WORLD, DESIGN AND INNOVATION, IT</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <br /> <span className='normal-f'> Urbanisation,architecture </span></div>
                                 <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
                                 </div>
                             </div>
+
                         </div>
                     </motion.div>
 
@@ -320,13 +321,7 @@ export const Description = () => {
                                 </div>
                             </div>
 
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: URBANISATION, ENVINRONMENT</div>
-                                <div className="description-block__task-desc">
-
-                                </div>
-                            </div>
-
+                          
                             <div className="description-block__task">
                                 <div className="description-block__task-title">Speaking</div>
                                 <div className="description-block__task-desc">
@@ -335,7 +330,7 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: MODERN WORLD, DESIGN AND INNOVATION, IT</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:  <br /> <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
@@ -366,19 +361,19 @@ export const Description = () => {
                                 </div>
                             </div>
 
-                            <div className="description-block__task">
+                            {/* <div className="description-block__task">
                                 <div className="description-block__task-title">VOCABULARY OF THE WEEK: MEDIA, ARTS</div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="description-block__task">
+                            {/* <div className="description-block__task">
                                 <div className="description-block__task-title">VOCABULARY OF THE WEEK: URBANISATION, ENVINRONMENT</div>
                                 <div className="description-block__task-desc">
 
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="description-block__task">
                                 <div className="description-block__task-title">Speaking</div>
@@ -388,7 +383,7 @@ export const Description = () => {
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: MODERN WORLD, DESIGN AND INNOVATION, IT</div>
+                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:   <br /> <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
                                 </div>
