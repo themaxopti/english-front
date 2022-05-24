@@ -1,401 +1,223 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useSideAnimation } from '../MainPage/motion'
+import { Spoiler } from './FirstPage'
 
 
 export const Description = () => {
     return (
         <div className='section' style={{ background: '#E6EAFD' }}>
             <div className="section__content section__content_p">
-                <div className="course-main">
-                    <div className="course-first-page__table" style={{transform:'translateY(40px)'}} >
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={0.5} variants={useSideAnimation(200)} className='description-block'>
-                            <motion.div custom={1.1} variants={useSideAnimation(-100)} className="description-block__week">2 неделя:</motion.div>
-                            <motion.div className="description-block__task">
-                                <div className="description-block__task-title">Listening</div>
-                                <div className="description-block__task-desc">Разбор и практика: Short-answer questions</div>
-                            </motion.div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Reading</div>
-                                <div className="description-block__task-desc"><strong>Разбор и практика:</strong> <br />
-                                    True/false/not stated,
-                                    Yes/no/not given
-                                </div>
+                <div className="second-desc">
+                    <Spoiler week='2 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Короткие ответы в аудировании</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Как работать с true/false/not given в чтении</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Разбор и написание графика процесса/или же Письма-жалобы (IELTS General)</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Написание эссе Advantages/Disadvantages</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Speaking Part 2: практикуемся правильно отвечать</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсуждаем и учим слова по теме: Communication, Lifestyles</div>
                             </div>
 
                             <div className="description-block__task">
-                                <div className="description-block__task-title">Writing</div>
                                 <div className="description-block__task-desc">
-                                    Task 1: Process – разбор, анализ и практика
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
                                 </div>
+                            </div>
+                        </div>
+                    </Spoiler>
+                    <Spoiler week='3 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Аудирование: matching information</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Чтение: multiple choice, matching features</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 1: описываем таблицы, диаграммы/письмо-извинение (IELTS General)</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 2: пишем Discussion Essay</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Speaking Part 3: учимся и практикуемся отвечать</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсуждаем и учим слова по теме: Modern World, Design and Innovations</div>
+                            </div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
+                        </div>
+                    </Spoiler>
+
+
+                    <Spoiler week='4 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Аудирование: практикуем и анализируем задания с диаграммами, планами, заполнениями таблиц</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Чтение: анализ текстов </div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 1: Описание карт</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 2: Problem and Solution essay</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Говорение: Практикуем все части говорения</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсуждаем и учим слова по теме: Modern World, Design and Innovations</div>
+                            </div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
+                        </div>
+                    </Spoiler>
+
+                    <Spoiler week='5 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Аудирование: практика задания «sentence completion»</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Чтение: практика заданий: matching sentence endings</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 1: смешанные типы диаграмм/письмо-объяснение (IELTS General)</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо Task 2: Open question essay</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Говорение: практикуем все части говорения</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсуждаем и учим слова по теме: Environment</div>
+                            </div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
+                        </div>
+                    </Spoiler>
+
+                    <Spoiler week='6 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Аудирование:практикуем multiple choice questions</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Чтение: практикуем задания с short-answer questions</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Письмо: практикуем написание эссе и графика/письма</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Говорение: Практикуем все части говорения</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсуждаем и учим слова по теме: Urbanization, architecture</div>
+                            </div>
+
+                            <div className="description-block__task">
+                                <div className="description-block__task-desc">
+                                    Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
+                                </div>
+                            </div>
+                        </div>
+                    </Spoiler>
+
+                    <Spoiler week='7 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Мы уже прошли все типы заданий и будем практиковать выполнение всех частей теста в полном объёме</div>
+                            </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсудим и выучим слова по теме: Business, Law</div>
                             </div>
                             
-
                             <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1:</div>
-                                <div className="description-block__task-desc">
-                                    <ul>
-                                        <li> Как сделать текст связным</li>
-                                        <li>Анализ и практика написания Advantages and Disadvantages Essay по специальной структуре</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1 General "Letter of complaint"</div>
-                               
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Часть 2: быстрая и эффективная схема ответа
-                                    Практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <span className='normal-f'> Lifestyles, Student life, Effective communication </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
-                        <div className='description-block'>
-                            <div className="description-block__week">3 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Listening</div>
-                                <div className="description-block__task-desc">Разбор и практика «Matching information »</div>
-                            </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Reading</div>
-                                <div className="description-block__task-desc">
-                                    Разбор и практика Multiple choice , Matching features
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Writing</div>
-                                <div className="description-block__task-desc">
-                                    <strong>Task 1:</strong>  <br /> Разбор, анализ и практика Tables, bars and pie charts
-                                </div>
-                                <div className="description-block__task-desc">
-                                    <strong>Task 1 General "Letter of apology"</strong>
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 2:</div>
-                                <div className="description-block__task-desc">
-                                    Как и какую грамматику использовать для высокой оценки?
-                                    Анализ и практика «Discussion Essay»
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Часть 3: схема ответа и практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:  <span className='normal-f'> TRAVELS, HISTORY, NATURAL WORLD </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
-                        <div className='description-block'>
-                            <div className="description-block__week">4 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Listening</div>
-                                <div className="description-block__task-desc">практика и анализ заданий: Plan, map, diagram labelling</div>
-                            </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Reading</div>
-                                <div className="description-block__task-desc">
-                                    практика и анализ заданий:Summary, note, table, flow- chart completion
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Writing</div>
-
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1:</div>
-                                <div className="description-block__task-desc">
-                                    <strong>Maps</strong> – анализ и практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1 General "Letter of recommendation" </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 2</div>
-                                <div className="description-block__task-desc">
-                                    <ul>
-                                        <li>Частые ошибки в эссе</li>
-                                        <li>Как быстро улучшить своё эссе</li>
-                                        <li>Навык быстрого нахождения аргументов для эссе</li>
-                                        <li>Анализ и практика Problem and solution essay</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:  <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-40px' }}>
-                        <div className='description-block'>
-                            <div className="description-block__week">5 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Listening</div>
-                                <div className="description-block__task-desc">практика и анализ заданий: Sentence completion</div>
-                            </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Reading</div>
-                                <div className="description-block__task-desc">
-                                    практика и анализ заданий: Sentence completion <br />
-                                    практика и анализ заданий: Matching sentence endings
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Writing</div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1:</div>
-                                <div className="description-block__task-desc">
-                                    Mixed Charts
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 1 General "Letter of explanation"</div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Task 2</div>
-                                <div className="description-block__task-desc">
-                                    <ul>
-                                        <li>Open question Essay</li>
-                                        <li>Time management</li>
-                                        <li>Быстрые схемы написаний Conclusion</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика <br />
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <span className='normal-f'> Envinronment </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
                                 </div>
                             </div>
-
                         </div>
-                    </motion.div>
+                    </Spoiler>
 
 
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true}} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
-                        <div className='description-block'>
-                            <div className="description-block__week">6 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Reading:</div>
-                                <div className="description-block__task-desc">Short-answer questions</div>
+                    <Spoiler week='8 Неделя'>
+                        <div className='desc-course-sect__two'>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Мы уже прошли все типы заданий и будем практиковать выполнение всех частей теста в полном объёме</div>
                             </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Listening:</div>
-                                <div className="description-block__task-desc">
-                                    Multiple choice questions
-                                </div>
+                            <div className='column-dot'>
+                                <div className='column-dot__one'></div>
+                                <div className='column-dot__two'>Обсудим и выучим слова по теме: Arts, Media</div>
                             </div>
-
+                            
                             <div className="description-block__task">
-                                <div className="description-block__task-title">Writing</div>
-                                <div className="description-block__task-desc">
-                                    Практика эссе и task 1
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика Speaking (3 parts)
-                                </div>
-                            </div>
-
-                           
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <span className='normal-f'> Urbanisation,architecture </span></div>
                                 <div className="description-block__task-desc">
                                     Домашнее задание по письму и  говорению (в аудио-формате) <br /> с обратной связью
                                 </div>
                             </div>
-
                         </div>
-                    </motion.div>
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table">
-                        <div className='description-block' style={{ transform: 'translateY(-80px)' }}>
-                            <div className="description-block__week">7 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">Практика эссе и task 1</div>
-                            </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">
-                                    Практика Speaking (3 parts)
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">
-                                    Reading (full) + Listening (part 1,2)
-
-                                </div>
-                            </div>
-
-                            {/* <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: BUSINES, LAW</div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div> */}
-
-                          
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика
-                                </div>
-                            </div>
-
-                            {/* <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK:   <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div> */}
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <span className='normal-f'> BUSINES, LAW </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-
-
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0.6} variants={useSideAnimation(200)} className="course-first-page__table" style={{ marginTop: '-34px' }}>
-                        <div className='description-block'>
-                            <div className="description-block__week">8 неделя:</div>
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">Практика эссе и task 1</div>
-                            </div>
-
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">
-                                    Практика Speaking (3 parts)
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-desc">
-                                    Reading (full) + Listening (part 3,4)
-                                </div>
-                            </div>
-
-                            {/* <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: MEDIA, ARTS</div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div> */}
-
-                            {/* <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: URBANISATION, ENVINRONMENT</div>
-                                <div className="description-block__task-desc">
-
-                                </div>
-                            </div> */}
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">Speaking</div>
-                                <div className="description-block__task-desc">
-                                    Практика
-                                </div>
-                            </div>
-
-                            <div className="description-block__task">
-                                <div className="description-block__task-title">VOCABULARY OF THE WEEK: <span className='normal-f'> MODERN WORLD, DESIGN AND INNOVATION, IT </span></div>
-                                <div className="description-block__task-desc">
-                                    Домашнее задание по письму и говорению (в аудио-формате) с обратной связью
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
+                    </Spoiler>
 
 
                 </div>

@@ -21,7 +21,7 @@ const IeltsOfYourDream: NextPage = () => {
       <How />
       <IeltsQuestions />
       <MemoTarifs />
-      <Form />
+      {/* <Form /> */}
     </Wrapper>
     </>
   )

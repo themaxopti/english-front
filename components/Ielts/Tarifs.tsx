@@ -13,12 +13,10 @@ import { SelectField } from '../Consultation/ConsultationForm'
 import moment from 'moment'
 import { composeWords, useTimer } from '../../helpers/delay'
 
-
-
 type Inputs = {
-    email: string,
-    name: string,
-    phone: string,
+    email: string
+    name: string
+    phone: string
     moduleAmount: number
     moduleTitle: string
 }
@@ -33,9 +31,7 @@ export const Tarifs = () => {
         dispatch(getIeltsCourse())
     }
 
-
     const [time, setTime] = useState('')
-
 
     useEffect(() => {
         (async () => firstRequest())()
@@ -58,7 +54,6 @@ export const Tarifs = () => {
                 ? 0 + " часов"
                 : duration.hours() + ' ' + composeWords(duration.hours(), 'hours')
 
-        // + duration.minutes() + ` ${min} ` + duration.seconds()
 
         const id = setInterval(function () {
             // @ts-ignore
@@ -76,7 +71,7 @@ export const Tarifs = () => {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
             console.log(data, errors)
-            const response = await Api.pay(data.email, data.phone, data.name, productId, data.moduleAmount, data.moduleTitle)
+            const response = await Api.pay(data.email, data.phone, data.name, productId, 2, data.moduleTitle)
             window.location.href = response!.data.checkout_url
             console.log(response!.data.checkout_url);
         } catch (e) {
@@ -143,16 +138,6 @@ export const Tarifs = () => {
                         </label>
 
                         <label>
-                            <p>  Количество модулей </p>
-                            <SelectField register={register('moduleAmount')} name='time'>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                {/* <option value="9.00">9.00</option>
-                                        <option value="12.00">12.00</option>
-                                        <option value="18.00">18.00</option> */}
-                            </SelectField>
-                        </label>
-                        <label>
                             <p>  Название модуля </p>
                             <SelectField register={register('moduleTitle')} name='time'>
                                 <option value="General">General</option>
@@ -193,7 +178,7 @@ export const Tarifs = () => {
                                     style={{ textDecoration: 'line-through' }}
                                     className="tarifs__price"
                                 >
-                                    $149.99
+                                    $249,99
                                 </motion.div>
                                 <motion.div
                                     custom={0.8}
@@ -201,7 +186,7 @@ export const Tarifs = () => {
                                     className="tarifs__price"
                                     style={{ translateY: "-15px" }}
                                 >
-                                    $119.99
+                                    $199
                                 </motion.div>
                                 <motion.div
                                     className='time'
@@ -215,26 +200,27 @@ export const Tarifs = () => {
                                     <div>Осталось</div>
                                     <div>{time}</div>
                                 </motion.div>
-                                <motion.div custom={0.9} variants={useSideAnimation(-100)} className="tarifs__desc">
+                                {/* <motion.div custom={0.9} variants={useSideAnimation(-100)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
                                     <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>249,99$</span> 199$ при оплате двух модулей сразу)</span>
-                                </motion.div>
+                                </motion.div> */}
                                 <motion.ul custom={1} variants={useSideAnimation(200)} className='tarifs__tasks'>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>Предварительная оценка текущего уровня</div>
+                                        <div>Предварительная оценка текущего уровня: после оплаты Вы получаете мини-задание в формате IELTS и обратную связь по его выполнению, замеряем Вашу точку A</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>3 групповых занятия в неделю</div>
+                                        <div>3 онлайн - групповых занятия в неделю по 1,5 часа: <br />
+                                            занятия будут проходить в группе до 4х человек в Зум. Каждый урок будет начинаться с объяснения, как выполнять определенный тип задания и потом мы сразу будем это практиковать. После каждого урока вы будете получать материалы по пройденной теме и доступ к уроку в записи. Вы также будете получать ссылки на статьи и лексику по теме недели.</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>Проверка ДЗ раз в неделю</div>
+                                        <div>Проверка ДЗ раз в неделю: <br /> У каждого участника будет личный гугл-документ, где он будет выполнять задание и получать проверку и анализ письменной части. Задание по говорению будут высылаться мне в аудио-формате и я буду высылать разбор </div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>Материалы и ресурсы для подготовки</div>
+                                        <div>Материалы и ресурсы для подготовки: <br /> Доступ ко всем материалам курса и лекций будет у участников в течении 4х недель по завершению программы </div>
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>
@@ -264,7 +250,7 @@ export const Tarifs = () => {
                                     style={{ textDecoration: 'line-through' }}
                                     className="tarifs__price"
                                 >
-                                    $499
+                                    $449
                                 </motion.div>
                                 <motion.div
                                     custom={0.7}
@@ -272,7 +258,7 @@ export const Tarifs = () => {
                                     className="tarifs__price"
                                     style={{ translateY: "-15px" }}
                                 >
-                                    $225
+                                    $399
                                 </motion.div>
                                 <motion.div
                                     className='time'
@@ -285,34 +271,39 @@ export const Tarifs = () => {
                                     <div>Осталось</div>
                                     <div>{time}</div>
                                 </motion.div>
-                                <motion.div custom={0.8} variants={useSideAnimation(200)} className="tarifs__desc">
+                                {/* <motion.div custom={0.8} variants={useSideAnimation(200)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
                                     <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>449$</span> 399$ при оплате двух модулей сразу)</span>
-                                </motion.div>
+                                </motion.div> */}
                                 <motion.ul custom={1} variants={useSideAnimation(100)} className='tarifs__tasks'>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>Предварительная оценка текущего уровня</div>
+                                        <div>Предварительная оценка текущего уровня: после оплаты Вы получаете мини-задание в формате IELTS и обратную связь по его выполнению, замеряем Вашу точку A</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>3 групповых занятия в неделю</div>
+                                        <div>3 онлайн- групповых занятия в неделю по 1,5 часа:  <br />
+                                            занятия будут проходить в группе до 4х человек в Зум. Каждый урок будет начинаться с объяснения, как выполнять определенный тип задания и потом мы сразу будем это практиковать. После каждого урока вы будете получать материалы по пройденной теме и доступ к уроку в записи. Вы также будете получать ссылки на статьи и лексику по теме недели.</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>проверка ДЗ раз в неделю</div>
+                                        <div>Проверка ДЗ раз в неделю: <br />
+                                            У каждого участника будет личный гугл-документ, где он будет выполнять задание и получать проверку и анализ письменной части. Задание по говорению будут высылаться мне в аудио-формате и я буду высылать разбор.</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>материалы и ресурсы для подготовки</div>
+                                        <div>Материалы и ресурсы для подготовки: <br />
+                                            Доступ ко всем материалам курса и лекций будет у участников в течении 4х недель по завершению программы.</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>отправка и индивидуальный разбор 8 эссе и 8 разговорных тестов</div>
+                                        <div>  <span style={{ fontWeight: 'bold' }}> Отправка и индивидуальный разбор 8 эссе и 8 разговорных тестов: </span>  <br />
+                                            Говорение и письмо – это, конечно, самые сложные части теста. Если вы хотите попрактиковать все типы эссе, максимально улучшить их структуру и получить еще больше разговорной практики, то это тариф для вас. В течение каждой недели курса у вас будет индивидуальный созвон со мной, где мы дополнительно проработаем написание эссе и еще больше разнообразим ваш словарный запас.</div>
                                     </li>
                                     <li>
                                         <div className='li_dot'></div>
-                                        <div>финальное оценивание в формате IELTS ( мы проведём вам тест и оценим ваши результаты в формате проведения теста, чтобы вы ощутили атмосферу экзамена в полной мере)</div>
+                                        <div>+ <span style={{ fontWeight: 'bold' }}> 8 проработанных ILETS Speaking тем и лексических словарей по ним: </span> <br />
+                                            вы получите дополнительные 8 лексических словарей и попрактикуете их со мной во время индивидуальной разговорной сессии.</div>
                                     </li>
                                 </motion.ul>
                                 <motion.ul custom={1.10} variants={useSideAnimation(0, 200)} className='tarifs__places'>

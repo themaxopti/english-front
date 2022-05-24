@@ -109,7 +109,6 @@ export const useSideAnimation = (x: number, y = 0): {} => {
         query: '(min-width: 1000px)'
     })
 
-
     if (isBig) {
         return {
             hidden: {
@@ -140,6 +139,50 @@ export const useSideAnimation = (x: number, y = 0): {} => {
     }
 
 }
+
+
+
+export const useSideAnimationCourse = (x: number, y = 0): {} => {
+
+    const isBig = useMediaQuery({
+        query: '(min-width: 1000px)'
+    })
+
+    if (isBig) {
+        return {
+            hidden: {
+                x,
+                y,
+                opacity: 0,
+                display:"none"
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                opacity: 1,
+                transition: { delay: custom },
+                display:"flex"
+            })
+        }
+    } else {
+        return {
+            hidden: {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                display:"none"
+            },
+            visible: (custom: any) => ({
+                x: 0,
+                y: 0,
+                opacity: 1,
+                display:"flex"
+            })
+        }
+    }
+
+}
+
 
 
 export const useSideAnimationDisplay = (x: number, y = 0): {} => {

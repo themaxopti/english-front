@@ -34,7 +34,28 @@ export const How = () => {
                         <motion.div custom={0.8} variants={useSideAnimation(300)} className='ielts-how__mark'>
                             <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
                             <div className="ielts-how__text">
-                            Каждая неделя связана с определенными лексическими темами, которые мы будем активно изучать и закреплять в течении недели.
+                            Каждая неделя связана с определенными лексическими темами, которые мы будем активно изучать и закреплять в течение недели.
+                            </div>
+                        </motion.div>
+
+                        <motion.div custom={0.8} variants={useSideAnimation(300)} className='ielts-how__mark'>
+                            <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
+                            <div className="ielts-how__text">
+                            Во время практики разговорной части мы будем участвовать в дебатах, общаться с носителями языка и делать мини-презентации по заданной теме – будет интересно.
+                            </div>
+                        </motion.div>
+
+                        <motion.div custom={0.8} variants={useSideAnimation(300)} className='ielts-how__mark'>
+                            <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
+                            <div className="ielts-how__text">
+                            У каждого ученика будет доступ к гугл-диску, где он будет выполнять домашние задания, получать проверку с разбором и сможет посмотреть пройденные уроки в записи.
+                            </div>
+                        </motion.div>
+
+                        <motion.div custom={0.8} variants={useSideAnimation(300)} className='ielts-how__mark'>
+                            <div className='ielts-how__image'><img src="/images/ielts-how-mark.svg" alt="" /></div>
+                            <div className="ielts-how__text">
+                            Все участники будут добавлены в Телеграм-чат, где можно будет задать вопросы мне лично и пообщаться.
                             </div>
                         </motion.div>
                     </div>

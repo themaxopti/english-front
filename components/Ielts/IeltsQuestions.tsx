@@ -22,14 +22,14 @@ export const IeltsQuestions: NextPage = () => {
                         </motion.div>
                         <motion.div custom={0.6} variants={useSideAnimation(200)} className={s["ielts-questions__question"]}>
                             <div className={s['ielts-questions__title']}>Буду ли я полностью готов к сдаче теста после этого курса?</div>
-                            <div className={s['ielts-questions__text']}>Данный курс абсолютно точно научит вас
+                            <div className={s['ielts-questions__text']}>Этот курс научит вас
                                 эффективно выполнять каждую часть теста, обогатит ваш словарный запас на
                                 основные темы IELTS, подтянет ваши пробелы в грамматике и лексике.</div>
                         </motion.div>
                         <motion.div custom={0.8} variants={useSideAnimation(200)} className={s["ielts-questions__question"]}>
                             <div className={s['ielts-questions__title']}>Кому подойдёт этот курс?</div>
                             <div className={s['ielts-questions__text']}>Этот курс рассчитан
-                                на людей, которые собираются сдавать IELTS Academic в ближайшее
+                                на людей, которые собираются сдавать IELTS Academic или IELTS General в ближайшее
                                 время (до года). Если ваш экзамен через два-три месяца, то этот
                                 курс как раз подготовит вас к правильному решению всех заданий и отточит
                                 ваши навыки и знания, обогатит ваш словарный запас и усилит грамматику. Если же ваш экзамен больше, чем через три месяца, то этот курс даст вам сильную базу и структуру, знания и умения как правильно решать все задания и в дальнейшем вы сможете самостоятельно продолжать

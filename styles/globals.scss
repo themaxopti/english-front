@@ -105,7 +105,7 @@ p {
   }
 }
 
-.normal-f{
+.normal-f {
   font-weight: bold;
   font-size: 13px;
 }
@@ -140,7 +140,7 @@ p {
 
 // Courses Page
 
-.time{
+.time {
   margin-top: 15px;
   margin-bottom: 5px;
   color: red;
@@ -157,7 +157,7 @@ p {
   justify-content: flex-start;
   font-family: "Arial";
 
-  &__modules{
+  &__modules {
     color: #305af6;
     font-weight: bold;
     margin-top: 10px;
@@ -241,7 +241,7 @@ p {
   &__task {
     display: flex;
     flex-direction: column;
-    row-gap: 0.2rem;
+    row-gap: 0.5rem;
   }
 
   &__task-title {
@@ -263,14 +263,42 @@ p {
   }
 }
 
+.second-desc{
+  font-family: "Arial";
+  background-color:white;
+  align-items: start;
+  display: grid;
+  align-content: start;
+  row-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 2rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+@media(max-width:903px){
+  .second-desc{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  } 
+}
+
 .course-main {
   margin-top: -50px;
   font-family: "Arial";
-  background-color: white;
+  background-color: black;
   width: 100%;
   height: 100%;
+  align-items: start;
+  justify-content: start;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+@media(max-width:901px){
+  .second-desc{
+    grid-template-columns: 1fr;
+  }
 }
 
 .ielts-how {
@@ -470,6 +498,52 @@ p {
   margin: 0 auto;
 }
 
+.column-dot {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  &__one {
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  &__two {
+    transform: translateY(-4px);
+  }
+}
+
+.desc-course-sect{
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+
+  &__one{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__two{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px; 
+  }
+
+  &__btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #305af6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    color: white;
+    cursor: pointer;
+  }
+}
+
 // privat-policy
 
 .privat-policy {
@@ -533,6 +607,10 @@ p {
     cursor: pointer;
     margin-top: 50px;
   }
+}
+
+.tarifs__card_two{
+  align-self: flex-start;
 }
 
 .tarifs__button_disable {
@@ -950,7 +1028,7 @@ video {
   background: #f1f1f1;
 }
 
-.tarifs__modal::-webkit-scrollbar-thumb{
+.tarifs__modal::-webkit-scrollbar-thumb {
   background: #305af6;
 }
 
