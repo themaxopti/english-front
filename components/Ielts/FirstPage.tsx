@@ -63,7 +63,7 @@ export const FirstPage = () => {
                     <div className="course-first-page__table" style={{ background: 'white' }}>
                         <div className='course-first-page__wrap'>
                             <motion.div custom={1.1} variants={useSideAnimation(-100)} className='course-first-page__title'><h1>Курс <br /> IELTS of YOUR DREAM</h1></motion.div>
-                            <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__level'>(уровень Upper-intermediate, Advanced)</motion.div>
+                            {/* <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__level'>(уровень Upper-intermediate, Advanced)</motion.div> */}
                             <motion.div custom={1.3} variants={useSideAnimation(-100)} style={{width:"100%",padding:'0 1rem 0 1rem',fontSize:'13px',marginTop:'5px'}}>Для тех, кто собирается поступать в международные ВУЗы, иммигрировать заграницу или строить карьеру в ТОП-компаниях</motion.div>
                             
                             <motion.div custom={1.3} variants={useSideAnimation(-100)} className='course-first-page__modules'>модули: Academic и General</motion.div>
