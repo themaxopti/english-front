@@ -172,23 +172,23 @@ export const Tarifs = () => {
                         <div className="tarifs__wrap">
                             <motion.div custom={0.5} variants={useSideAnimation(100)} className="tarifs__card tarifs__card_blue tarifs__card_one">
                                 <motion.div custom={0.7} variants={useSideAnimation(-100)} className="tarifs__title">Тариф «Стандарт»</motion.div>
-                                <motion.div
+                                {/* <motion.div
                                     custom={0.7}
                                     variants={useSideAnimation(100)}
                                     style={{ textDecoration: 'line-through' }}
                                     className="tarifs__price"
                                 >
                                     $249,99
-                                </motion.div>
+                                </motion.div> */}
                                 <motion.div
                                     custom={0.8}
                                     variants={useSideAnimation(100)}
                                     className="tarifs__price"
                                     style={{ translateY: "-15px" }}
                                 >
-                                    $199
+                                    $249.99
                                 </motion.div>
-                                <motion.div
+                                {/* <motion.div
                                     className='time'
                                     custom={0.7}
                                     variants={useSideAnimation(100)}
@@ -199,7 +199,7 @@ export const Tarifs = () => {
                                         Купить по специальной цене можно до  19:00 27/05</div>
                                     <div>Осталось</div>
                                     <div>{time}</div>
-                                </motion.div>
+                                </motion.div> */}
                                 {/* <motion.div custom={0.9} variants={useSideAnimation(-100)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
                                     <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>249,99$</span> 199$ при оплате двух модулей сразу)</span>
@@ -244,23 +244,23 @@ export const Tarifs = () => {
                                     className="tarifs__title">Тариф <br />  «Углубленная подготовка»
                                 </motion.div>
 
-                                <motion.div
+                                {/* <motion.div
                                     custom={0.7}
                                     variants={useSideAnimation(100)}
                                     style={{ textDecoration: 'line-through' }}
                                     className="tarifs__price"
                                 >
-                                    $449
-                                </motion.div>
+                                    $499
+                                </motion.div> */}
                                 <motion.div
                                     custom={0.7}
                                     variants={useSideAnimation(100)}
                                     className="tarifs__price"
                                     style={{ translateY: "-15px" }}
                                 >
-                                    $399
+                                    $499
                                 </motion.div>
-                                <motion.div
+                                {/* <motion.div
                                     className='time'
                                     custom={0.7}
                                     variants={useSideAnimation(100)}>
@@ -270,7 +270,7 @@ export const Tarifs = () => {
                                         Купить по специальной цене можно до  19:00 27/05</div>
                                     <div>Осталось</div>
                                     <div>{time}</div>
-                                </motion.div>
+                                </motion.div> */}
                                 {/* <motion.div custom={0.8} variants={useSideAnimation(200)} className="tarifs__desc">
                                     <span className='tarifs__module'>(1 модуль)</span>
                                     <span className='tarifs__or'>(или <span style={{ textDecoration: 'line-through', fontWeight: "bold" }}>449$</span> 399$ при оплате двух модулей сразу)</span>
